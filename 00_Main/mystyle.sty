@@ -1,0 +1,39 @@
+\ProvidesPackage{mystyle}
+
+\usepackage{import}
+
+\usepackage{amsmath}
+
+\usepackage{bm}
+
+\usepackage[british]{babel}
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu} %provides overbars for equations with improved sizing
+
+\usepackage[b]{esvect} %provides arrows for vectors, style of arrow provided by [x].
+
+\usepackage{graphicx}
+
+\usepackage{hyperref}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{etex}
+
+\usepackage{hyperref}
+
+\usepackage{soul}
+
+\usepackage{multirow} % for tables
+
+\usepackage{booktabs} % for tables
+
+\usepackage{float} % enables forced positioning [H] of figures
+
+\usepackage[backend=biber, style=authoryear-comp, citestyle=authoryear-comp, bibstyle=authoryear, maxbibnames=100, maxcitenames=2, isbn=false, url=true, eprint=false, firstinits=true, dashed=true, natbib=true]{biblatex} %19.09.: changed style=authoryear to authoryear-comp
+
+\usepackage{siunitx} %provides syntax for proper SI-unit-representation
+
+\usepackage[normalem]{ulem} %provides more options for underlining; [normalem]-option assures, that no underlining is done with the standard-command \emph - otherwise problems with linebreaks in the bibliography occur
+
+\usepackage{pdfpages} % to include external pdfs into the document

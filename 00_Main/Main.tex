@@ -1,0 +1,116 @@
+\documentclass[a4paper, 12pt, bibliography=totoc, parskip=half, numbers=noenddot, twoside=true, open=right,headings=twolinechapter]{scrreprt}
+
+\usepackage{mystyle}
+
+\addbibresource{../08_Literature/references.bib}
+
+\begin{document}
+
+%% Title page
+\subimport{./}{Title}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+%% Abstract
+
+
+\newpage
+%\addcontentsline{toc}{chapter}{Abstract}
+\subimport{./}{Abstract}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+%\addcontentsline{toc}{chapter}{Resume}
+\subimport{./}{Resume}
+
+%% Declaration
+\newpage
+%\addcontentsline{toc}{chapter}{Declaration}
+\subimport{./}{Declaration}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\newpage
+%\addcontentsline{toc}{chapter}{Declaration}
+\subimport{./}{Acknowledgements}
+
+
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+%% Table of contents
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+%% Some other lists:
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+\newpage
+%\twocolumn
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+\subimport{./}{Abbreviations}
+%\twocolumn
+%\addcontentsline{toc}{chapter}{Nomenclature}
+%\subimport{./}{Nomenclature}
+%\onecolumn
+%\newpage
+
+%\thispagestyle{empty}
+%\mbox{}
+
+%\pagenumbering{arabic}
+
+%% Chapters
+
+\chapter{Introduction}
+\pagenumbering{arabic}
+\label{Chap-Intro}
+
+\subimport{../01_Introduction/}{Intro}
+
+\chapter{Theoretical Background}
+\label{Chap-TheoBack}
+
+\subimport{../02_Theoretical_Background/}{ThBack}
+
+\chapter{Study Region: The Chtouka-Massa Plain}
+\label{Chap-MatMeth}
+
+\subimport{../03_SoussMassa/}{SoussMassa}
+\label{Chap-SouMas}
+
+%\chapter{Model Structure (and Methods)}
+
+\subimport{../04_MaterialMethods/}{MatMeth}
+
+\chapter{Results and Discussion}
+\label{Chap-Results}
+
+\subimport{../05_Results/}{Results}
+
+\chapter{Conclusion}
+\label{Chap-Conc}
+
+\subimport{../06_Conclusion/}{Conc}
+
+\printbibliography
+
+\appendix
+\label{Chap-Appendix}
+
+\subimport{../09_Appendix/}{Apdx}
+
+\end{document}

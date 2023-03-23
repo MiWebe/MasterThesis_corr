@@ -1,0 +1,65 @@
+Accordingly, the change to the stored  difference between the masses $M$ of inflowing water, $M_{in}$, outflowing water $M_{out}$ and water being added through sources or withdrawn from sinks $M_{ss}$ is the amount of water stored $M_{stor}$,
+
+\begin{equation}
+    M_{stor} = M_{in} - M_{out} + M_{ss}
+\end{equation}
+
+This balance can also be expressed in terms of mass flow rates $dM / dt$ of changes of mass $dM$ over small time increments $dt$,
+
+\begin{equation}
+    \frac{dM_{stor}}{dt} = \frac{M_{in}}{dt} - \frac{dM_{out}}{dt} + frac{dM_{ss}}{dt}
+\end{equation}
+
+Dividing the aquifer into small control volumes of volumes $V$, the mass within these volumes can be expressed in terms of the density $\rho$ of water, $M = \rho \, V$. With the assumption of a constant density of water $\rho = const.$ follows
+
+\begin{equation}
+    \frac{dV_{stor}}{dt} = \frac{V_{in}}{dt} - \frac{dV_{out}}{dt} + frac{dV_{ss}}{dt}
+\end{equation}
+
+
+
+The aquifer can be divided in a number of small control volumes. 
+
+\begin{equation}
+    \frac{\Delta M_{stor}}{\Delta t} = \frac{\Delta M_{in}}{a}
+\end{equation}
+
+
+
+\hl{(to add: figure showing specific storage (and maybe yield) of a water column of a water column of a confined and an unconfined aquifer)}
+
+
+outdated:
+\begin{itemize}
+    \item storativity $S$ is the (normalised) volume of water that an aquifer releases at a unit decline in head
+    \item The "specific yield is defined as the ratio of (1) the volume of water that a rock or soil will yield by gravity [the drainable volume $V_{W,drn}$] to (2) the total volume of the rock or soil" \parencite{Johnson.1967} (Equation \eqref{Eq-SpecificYield}).
+    \item specific yield $S_y$ ($\textrm{L or whatever}$) the portion of the total volume that can be drained by the influence of gravity or pumping.
+    \item The other part of the (not this way) drainable pore volume is called the specific retention $S_r$ ($\textrm{L or whatever}$) \parencite{Meinzer.1923}.
+    \item (the non-drainable water volume, is called the retained water $V_{W,r}$)
+    \item (the non-drainable water itself is called pendular water \parencite{Fetter.2001})
+    \item with decreasing average grain size of a porous medium but constant porosity, the surface area increases
+    \item furthermore pore sizes decrease
+    \item thereby the specific retention increases and accourdingly the specific yield decreases
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{One.One}\label{Sec-OneOne}
+
+blabla
+
+\begin{equation}\label{Eq-MassBalDyn}
+    \begin{Bmatrix}
+        \textrm{rate of} \\ \textrm{increase} \\ \textrm{of mass}
+    \end{Bmatrix}
+     = 
+    \begin{Bmatrix}
+        \textrm{rate of} \\ \textrm{mass} \\ \textrm{in}
+    \end{Bmatrix}
+     - 
+    \begin{Bmatrix}
+        \textrm{rate of} \\ \textrm{mass} \\ \textrm{out}
+    \end{Bmatrix}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
