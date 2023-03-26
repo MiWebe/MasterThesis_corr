@@ -5,47 +5,66 @@
 \section{Fundamental Terms}
 \label{Sec-TheoFundTerms}
 
-Rocks and soils constituting ground are commonly porous materials, consisting of a solid matrix and an interstitial pore space. Depending on the size of the pores, they can store and conduct groundwater. The ratio between the volume of the pore space $V_p$ and the total volume $V_{tot}$ of a soil probe is called the porosity $\phi$ \parencite{Fetter.2001},
+Rocks and soils constituting ground are commonly porous materials, consisting of a solid matrix and an interstitial pore space. 
+Depending on the size of the pores, they can store and conduct groundwater. 
+The ratio between the volume of the pore space $V_p$ and the total volume $V_{tot}$ of a soil probe is called the porosity $\phi$ \parencite{Fetter.2001},
 
 \begin{equation}
     \label{Eq-Porosity}
     \phi = \frac{V_p}{V_{tot}}
 \end{equation}
 
-The accessibility of the pore space to water and to a water flow is limited by the pores of smallest diameter, thus possibly creating non-water filled pores and dead ends. Therefore, only a smaller portion of the pore space is effectively available for groundwater flow. This portion of the pore space is called the effective porosity $\phi_{eff}$ \parencite{Fetter.2001}. It is defined as the ratio of the water-accessible volume $V_w$ to the total volume of a soil probe,
+The accessibility of the pore space to water and to a water flow is limited by the pores of smallest diameter, thus possibly creating non-water filled pores and dead ends. 
+Therefore, only a smaller portion of the pore space is effectively available for groundwater flow. 
+This portion of the pore space is called the effective porosity $\phi_{eff}$ \parencite{Fetter.2001}. 
+It is defined as the ratio of the water-accessible volume $V_w$ to the total volume of a soil probe,
 
 \begin{equation}
     \label{Eq-PorEff}
     \Phi_{eff} = \frac{V_w}{V_{tot}}
 \end{equation}
 
-On mechanical level, the water contained in a soil interacts with the solid matrix amongst others through molecular and surface tension forces. In case of gravitational drainage of an initially saturated soil, gravitation exerts a stress on the water film enclosing the matrix elements. As the stored water volume decreases, surface tension increases until a balance of the two opposing stresses reaches an equilibrium \parencite{Fetter.2001}. The water volume drained through gravitation is called the gravity groundwater, with the corresponding volume being denoted by $V_{W,g}$ \parencite{Johnson.1967}. The ratio between $V_{w,g}$ and the total volume $V_{tot}$ is called the specific yield $S_y$,
+On mechanical level, the water contained in a soil interacts with the solid matrix amongst others through molecular and surface tension forces. 
+In case of gravitational drainage of an initially saturated soil, gravitation exerts a stress on the water film enclosing the matrix elements. 
+As the stored water volume decreases, surface tension increases until a balance of the two opposing stresses reaches an equilibrium \parencite{Fetter.2001}. 
+The water volume drained through gravitation is called the gravity groundwater, with the corresponding volume being denoted by $V_{W,g}$ \parencite{Johnson.1967}. 
+The ratio between $V_{w,g}$ and the total volume $V_{tot}$ is called the specific yield $S_y$,
 
 \begin{equation}
     \label{Eq-Sy}
     S_y = \frac{V_{w,g}}{V_{tot}}
 \end{equation}
 
-Another stress on a water-filled soil stems from the pressure exerted by the water column, which is measured as hydraulic head. Due to the elasticity of both the solid matrix and the water in the voids this leads to a variability of the amount of stored water \parencite{Fetter.2001}. For one, an increasing pressure induces a contraction of the solid matrix and thus increases the effective porosity. Additionally the water itself is compressed in this case, thereby allowing for more water to be stored. The specific storage $S_s$ $(\textrm{m})$ accounts for this effect. It is defined by
+Another stress on a water-filled soil stems from the pressure exerted by the water column, which is measured as hydraulic head. 
+Due to the elasticity of both the solid matrix and the water in the voids this leads to a variability of the amount of stored water \parencite{Fetter.2001}. 
+For one, an increasing pressure induces a contraction of the solid matrix and thus increases the effective porosity. 
+Additionally the water itself is compressed in this case, thereby allowing for more water to be stored. 
+The specific storage $S_s$ $(\textrm{m})$ accounts for this effect. 
+It is defined by
 
 \begin{equation}
     \frac{\partial \rho \phi}{\partial t} = \rho \, g \, \left( \beta_p + \phi \, \beta_w \right)
 \end{equation}
 
-\noindent with the density $\rho$ $(\textrm{kg} \, \textrm{m}^{-3})$ of water, the standard gravity $g$ $(\textrm{m} \, \textrm{s}^{-2})$, the compressibility of the bulk aquifer material $\beta_p$ $(\textrm{m}^{2} \, \textrm{N}^{-1})$ and the compressibility of water $\beta_w$ $(\textrm{m}^{2} \, \textrm{N}^{-1})$. Specific yield and specific storage represent two different material properties of an aquifer. they are summarised by the dimensionless storativity $S$ \parencite{Fetter.2001},
+\noindent with the density $\rho$ $(\textrm{kg} \, \textrm{m}^{-3})$ of water, the standard gravity $g$ $(\textrm{m} \, \textrm{s}^{-2})$, the compressibility of the bulk aquifer material $\beta_p$ $(\textrm{m}^{2} \, \textrm{N}^{-1})$ and the compressibility of water $\beta_w$ $(\textrm{m}^{2} \, \textrm{N}^{-1})$. 
+Specific yield and specific storage represent two different material properties of an aquifer. 
+they are summarised by the dimensionless storativity $S$ \parencite{Fetter.2001},
 
 \begin{equation}
     \label{Eq-Storativity}
     S = S_y + b \, S_s
 \end{equation}
 
-\noindent where $b$ denotes the water-filled thickness of the aquifer. Graphically, the storativity is the volume of water $V_w$ absorbed or expelled from storage of a permeable unit per unit surface area $A$ and unit change in head $h$ \parencite{Fetter.2001},
+\noindent where $b$ denotes the water-filled thickness of the aquifer. 
+Graphically, the storativity is the volume of water $V_w$ absorbed or expelled from storage of a permeable unit per unit surface area $A$ and unit change in head $h$ \parencite{Fetter.2001},
 
 \begin{equation}
     S = \frac{1}{A} \, \frac{\partial V_w}{\partial h}
 \end{equation}
 
-For unconfined aquifers the contribution from the specific yield is much larger than the contribution from the specific storage to the storativity \parencite{Todd.2005}. For draining confined aquifers however, the specific yield equals zero as long as they remain water saturated \parencite{Fetter.2001}. Thus, the specific storage of a confined aquifer can be approximated by
+For unconfined aquifers the contribution from the specific yield is much larger than the contribution from the specific storage to the storativity \parencite{Todd.2005}. 
+For draining confined aquifers however, the specific yield equals zero as long as they remain water saturated \parencite{Fetter.2001}. 
+Thus, the specific storage of a confined aquifer can be approximated by
 
 \begin{equation}
     \label{Eq-SsSy}
@@ -57,14 +76,17 @@ For unconfined aquifers the contribution from the specific yield is much larger 
 \section{The Groundwater Flow Equation}
 \label{Sec-GWFlowEq}
 
-For water flowing in an aquifer conservation of mass can be assumed \parencite{Mays.2005}. Furthermore, the aquifer can be divided into a number of small control volumes $dV = dx \, dy \, dz$ with side lengths $dx$ $dy$ and $dz$ in $x$-, $y$- and $z$-direction, respectively \parencite{Fetter.2001}. On each of these control volumes a mass balance can be written, where the change in stored mass $dM / dt$ in the volume over time equals the difference in rates of inflowing water mass $\dot{M}_{in}$, outflowing water mass $\dot{M}_{out}$ and water mass added or withdrawn by sources or sinks $\dot{M}_{ss}$,
+For water flowing in an aquifer conservation of mass can be assumed \parencite{Mays.2005}. 
+Furthermore, the aquifer can be divided into a number of small control volumes $dV = dx \, dy \, dz$ with side lengths $dx$ $dy$ and $dz$ in $x$-, $y$- and $z$-direction, respectively \parencite{Fetter.2001}. 
+On each of these control volumes a mass balance can be written, where the change in stored mass $dM / dt$ in the volume over time equals the difference in rates of inflowing water mass $\dot{M}_{in}$, outflowing water mass $\dot{M}_{out}$ and water mass added or withdrawn by sources or sinks $\dot{M}_{ss}$,
 
 \begin{equation}
     \label{Eq-DerivGWFlow1}
     \frac{dM}{dt} = \dot{M}_{in} - \dot{M}_{out} + \dot{M}_{ss}
 \end{equation}
 
-The mass flow rates can also be written in terms of water density $\rho(\bm{x},t)$ and fluxes $\bm{q} = (q_x,q_y,q_z)$ through the surfaces $(dx \, dy)$, $(dx \, dz)$ and $(dy \, dz)$ of the control volume \parencite{Mays.2005}. Assuming a constant density $\rho(\bm{x},t) = \rho$ and letting the side lengths tend towards zero gives
+The mass flow rates can also be written in terms of water density $\rho(\bm{x},t)$ and fluxes $\bm{q} = (q_x,q_y,q_z)$ through the surfaces $(dx \, dy)$, $(dx \, dz)$ and $(dy \, dz)$ of the control volume \parencite{Mays.2005}. 
+Assuming a constant density $\rho(\bm{x},t) = \rho$ and letting the side lengths tend towards zero gives
 
 \begin{equation}
     \label{Eq-DerivGWFlow2}
@@ -78,28 +100,33 @@ With Darcy's law the fluxes $q_i$ can be estimated through the changes $\partial
     q_i = \sum_{j=x,y,z} \left( K_{ij} \frac{\partial h}{\partial x_j} \right)
 \end{equation}
 
-\noindent where $K_{ij}$ denote the respective hydraulic conductivities \parencite{Mays.2005}. Without loss of generality the coordinate axes of the control volume can be chosen parallel to the major directions of the porous medium, so that the non-diagonal terms of the hydraulic conductivity tensor equal zero, $K_{ij} = 0 \forall i \neq j$. Therewith Equation \eqref{Eq-DerivGWFlow2} becomes
+\noindent where $K_{ij}$ denote the respective hydraulic conductivities \parencite{Mays.2005}. 
+Without loss of generality the coordinate axes of the control volume can be chosen parallel to the major directions of the porous medium, so that the non-diagonal terms of the hydraulic conductivity tensor equal zero, $K_{ij} = 0 \forall i \neq j$. 
+Therewith Equation \eqref{Eq-DerivGWFlow2} becomes
 
 \begin{equation}
     \label{Eq-DerivGWFlow4}
     \frac{dM}{dt} = \rho \, dx \, dy \, dz \left( \frac{\partial}{\partial x} \left( K_{xx} \frac{\partial h}{\partial x} \right) + \frac{\partial}{\partial x} \left( K_{yy} \frac{\partial h}{\partial y} \right) + \frac{\partial}{\partial x} \left( K_{zz} \frac{\partial h}{\partial z} \right) \right)
 \end{equation}
 
-The stored water mass $M$ on the left hand side is generally given by the density of water $\rho(\bm{x},t)$ and the water volume inside the control volume. This volume is given according to Equation \eqref{Eq-PorEff} by the effective porosity $\phi_{eff}$ and the total volume of the control volume $dV = dx \, dy \, dz$,
+The stored water mass $M$ on the left hand side is generally given by the density of water $\rho(\bm{x},t)$ and the water volume inside the control volume. 
+This volume is given according to Equation \eqref{Eq-PorEff} by the effective porosity $\phi_{eff}$ and the total volume of the control volume $dV = dx \, dy \, dz$,
 
 \begin{equation}
     \label{Eq-DerivGWFlow5}
     M = \rho(\bm{x},t) \, \phi_{eff} \, dV
 \end{equation}
 
-\noindent Here $dV$ is by definition constant over time. However both water density and effective porosity depend on the stresses exerted on the control volume and are therewith functions of space and time. Thus follows
+\noindent Here $dV$ is by definition constant over time. However both water density and effective porosity depend on the stresses exerted on the control volume and are therewith functions of space and time. 
+Thus follows
 
 \begin{equation}
     \label{Eq-DerivGWFlow6}
     \frac{dM}{dt} = dV \, \frac{\partial (\rho(\bm{x},t) \, \phi_{eff})}{\partial t}
 \end{equation}
 
-\noindent Through application of the chain rule the right side can be expressed through the specific storage $S_s$ and the change in hydraulic conductivity \parencite{Mays.2005}. As for Equation \eqref{Eq-DerivGWFlow2} constant density $\rho$ is assumed. This ultimately leads to the groundwater flow equation \parencite{Mays.2005}:
+\noindent Through application of the chain rule the right side can be expressed through the specific storage $S_s$ and the change in hydraulic conductivity \parencite{Mays.2005}. 
+As for Equation \eqref{Eq-DerivGWFlow2} constant density $\rho$ is assumed. This ultimately leads to the groundwater flow equation \parencite{Mays.2005}:
 
 \begin{equation}
     \label{Eq-GWFlow}

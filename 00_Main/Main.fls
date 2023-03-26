@@ -1,8 +1,8 @@
-PWD d:/OneDrive/013 - Master/06 - Masterarbeit/05-WrittenPart-trustful/00_Main
+PWD d:/OneDrive/013 - Master/06 - Masterarbeit/06-Masterarbeit-Corrections-trustful/00_Main
 INPUT d:/Programs/texlive/2022/texmf.cnf
 INPUT d:/Programs/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT d:/Programs/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT d:/OneDrive/013 - Master/06 - Masterarbeit/05-WrittenPart-trustful/00_Main/Main.tex
+INPUT d:/OneDrive/013 - Master/06 - Masterarbeit/06-Masterarbeit-Corrections-trustful/00_Main/Main.tex
 OUTPUT Main.log
 INPUT d:/Programs/texlive/2022/texmf-dist/tex/latex/koma-script/scrreprt.cls
 INPUT d:/Programs/texlive/2022/texmf-dist/tex/latex/koma-script/scrreprt.cls
