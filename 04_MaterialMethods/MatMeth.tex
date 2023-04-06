@@ -3,16 +3,14 @@
 \chapter{Conceptual Model/Model Geometry}
 \label{Chap-ConcMod}
 
-Introduction:
-
-Basing on the descriptions of the preceding Chapter \ref{Chap-SouMas}, the water balance of the Chtouka aquifer can be regarded as shown in Figure \ref{Fig-SchemeBalance}: First of, groundwater directly enters and leaves the volume of the aquifer at its boundaries. 
+Based on the descriptions of the preceding Chapter \ref{Chap-SouMas}, the conceptual model of the Chtouka aquifer can be regarded as shown in Figure \ref{Fig-SchemeBalance}: First, groundwater directly enters and leaves the volume of the aquifer at its boundaries. 
 Additional recharge is naturally provided by local rainfalls and infiltration from the Massa River, as well as from the YBT reservoir. 
-At the same time, the Massa River can act as a drain of the aquifer, depending on its current gauge. 
+At the same time, the Massa River can act as a drain of the aquifer, depending on its water level. 
 Artificially, water is withdrawn for drinking and irrigation. 
-As the irrigation water is applied to the irrigation perimeters at the surface of the aquifer, a partition of the irrigation water reinfiltrates into the aquifer. 
-The other part however is lost due to evapotranspiration.
+As the irrigation water is applied to the irrigation perimeters at the surface of the aquifer, a fraction of the irrigation water reinfiltrates into the aquifer. 
+The other part is lost due to evapotranspiration.
 
-In this chapter the conceptual model following from this schematic water balance is described. 
+In this chapter the conceptual model in Figure \ref{Fig-SchemeBalance} is described. 
 Therefore, the aquifer is first delineated and its boundaries are characterised (Section \ref{Sec-Delineation}). 
 Then the geological model of the aquifer volume is described, as it was derived by \textcite{Horn.2021} (Section \ref{Sec-GeolModel}). 
 In the subsequent Sections \ref{Sec-PrecRech}-\ref{Sec-IrrRech} the other sources and sinks of the water balance are specified. 
@@ -30,12 +28,12 @@ At last, in Section \ref{Sec-Piezometers} the piezometers, which represent the o
 \section{Delineation of the Model}
 \label{Sec-Delineation}
 
-For delineation in the $xy$-plane, a set of four boundaries, each characterised by a particular type of boundary condition has been characterised by \cite{Horn.2021}. 
-These different boundaries approximately follow the orientation of the model outline in space and are therefore named as \textit{northern, eastern, southern} and \textit{western boundary}. 
+For delineation in the $xy$-plane, a set of four boundaries, each characterised by a particular type of boundary condition were defined \parencite{Anzar.2016}. 
+These different boundaries approximately follow the cardinal directions and are therefore named as \textit{northern, eastern, southern} and \textit{western boundary}. 
 The four boundaries are shown in Figure \ref{Map-BCPzPrec}. 
 Their exact course is defined by \textcite{Anzar.2016}.
 
-\begin{figure}[h]
+\begin{figure}[p]
     \centering
     \includegraphics{./img/Map-BCPzPrec.pdf}
     \caption{Main components of the Chtouka aquifer conceptual model. For clarity, only the boundaries seperating the three precipitation areas are depicted. For the piezometers used to define the eastern boundary condition, PiT means point-in-time measurements and TS time series.}
@@ -44,28 +42,28 @@ Their exact course is defined by \textcite{Anzar.2016}.
 
 \subsection{Northern Boundary}
 
-The northern boundary is defined as a Neumann no-flow boundary. 
-It follows a by \cite{Horn.2021} estimated streamline derived from a contour map of the groundwater table in 1968 by \textcite{Bernet.1968} (reproduced in \textcite{Bernet.1977}) which therewith presents a groundwater divide. 
+The northern boundary is defined as a Neumann no-flow boundary (Figure \ref{Map-BCPzPrec}). 
+It follows an estimated streamline derived from a contour map of the groundwater table in 1968 by \textcite{Bernet.1968} (reproduced in \cite{Bernet.1977}) which represents a groundwater divide. 
 The boundary runs from the north-eastern corner of the model over $45.3 \, \textrm{km}$ in north-western direction to the coast of the Atlantic Ocean. 
 Even though streamlines change depending on groundwater levels and their spatial and temporal variation, due to lack of data this boundary is assumed to be constant over the modelling period.
 
 \subsection{Eastern Boundary}
 
-For this study, at the eastern boundary an adjusted version of the specified head boundary (Dirichlet) by \cite{Horn.2021} is used with estimated transient heads. 
-This boundary marks the transition between the Chtouka plain and the foothills of the Anti Atlas. 
+For this study, at the eastern boundary an adjusted version of the specified head boundary (Dirichlet) by \textcite{Horn.2021} is used with estimated transient heads. 
+This boundary marks the transition between the Chtouka plain and the foothills of the Anti Atlas (Figure \ref{Map-BCPzPrec}). 
 The head stages along the boundary vary in both space and time. 
 They are estimated from surface elevation data of a digital elevation model (DEM) \parencite{NASA.SRTM1Arc} and piezometric measurements of the depth to the water table. 
-These latter piezometric measurements are at different times and within a $1.5 \, \textrm{km}$ wide buffer zone along the boundary. 
+These latter piezometric measurements were taken at different times and are within a $1.5 \, \textrm{km}$ wide buffer zone along the boundary. 
 Most of the observations stem from initial measurements done when bringing new groundwater wells into service, and are single point-in-time measurements. 
 This data encompasses two measurements from 1967 and therewith from one year before the start of the modelling period. 
 For the period from 1968 to 2003 a total of 14 more such measurements at different locations are available. 
 Furthermore, at one location $8 \, \textrm{km}$ from the north-eastern corner of the model area a time series exists, covering the hydrological years 1968 to 1995 with a temporal resolution ranging from monthly to once every two years. 
-Another time series, with a coverage of 10 measurements over $1.5 \, \textrm{years}$ much shorter time series is due to its only little variation of less than $1 \, \textrm{m}$ considered as single point-in-time measure.
+Another much shorter time series, with a coverage of 10 measurements over $1.5 \, \textrm{years}$, is considered as single point-in-time measure due to its only little variation of less than $1 \, \textrm{m}$.
 
-With this data the initial head in 1968 is estimated at 29 locations along the boundary based on three characteristics:
+With these data the initial head in 1968 is estimated at 29 locations along the boundary based on three characteristics:
     \begin{itemize}
         \item (i) measurements from 1968,
-        \item (ii) extrapolated measurements from earlier and later hydrological years, such that the amplitude of head variations over the years is of the same order as the one observed in the time series and
+        \item (ii) extrapolated measurements from earlier and later hydrological years, such that the amplitude of head variations over the years is of the same order as the one observed in the time series, and
         \item (iii) following the natural topography.
     \end{itemize}
 
@@ -84,16 +82,16 @@ For the period after 2005 no further information is available and thus the heads
 
 \subsection{Southern Boundary}
 
-The southern boundary is defined by the Massa River. 
+The southern boundary is defined by the Massa River (Figure \ref{Map-BCPzPrec}). 
 Due to both the temporal and spatial variability of the flow regimes along the river, changing influent and effluent conditions of the aquifer occur along this boundary. 
-To account for this, \cite{Horn.2021} implemented this boundary as Chauchy boundary condition into GMS. 
+To account for this, \cite{Horn.2021} implemented this boundary as Cauchy boundary condition into GMS. 
 Hence it is characterised through three parameters: the bottom elevation of the river channel, the head stage and the riverbed conductance. 
-The bottom elevation is defined using the DEM.
+The bottom elevation is approximated using the DEM.
 
 The head stages are estimated by an assumed linear relation between the discharge rate measured at the YBT dam and the assumed average water level in the river. 
 These discharge rates are extracted from data of daily water balances in the YBT reservoir aggregated to yearly data. 
-As these measurements were taken only from 1974 onwards, once the dam became fully operational two different time periods need to be distinguished: before and after 1974. 
-For the prior time period from 1968 to 1974 head stages are estimated from annual rainfalls.
+As these measurements were taken only from 1974 onwards, once the dam became fully operational, two different time periods need to be distinguished: before and after 1974. 
+From 1968 to 1974 head stages are estimated from annual rainfalls.
 
 The conductance $C$ $\left( \textrm{m} \, \textrm{s}^{-1} \right)$ is estimated as conductance per unit length by
 
@@ -112,7 +110,7 @@ In the wider downstream part on the other hand less erosion and higher sedimenta
 \subsection{Western Boundary}
 
 The western boundary is defined as a Dirichlet constant head boundary. 
-Its shape is defined by the coast of the Chtouka plain along the Atlantic Ocean. 
+Its shape is defined by the coast of the Chtouka plain along the Atlantic Ocean (Figure \ref{Map-BCPzPrec}). 
 Head stages at this boundary are assumed to be at a constant sea level of $0 \, \textrm{m.a.s.l.}$ over the whole modelling period.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,7 +118,7 @@ Head stages at this boundary are assumed to be at a constant sea level of $0 \, 
 \section{Geological Model}
 \label{Sec-GeolModel}
 
-In a previous work, \cite{Horn.2021} built a geological model of the Chtouka aquifer (Figure \ref{Fig-GeolMod}) on the basis of lithological drilling data from 100 boreholes, geophysical measurements and a geological map of the region. 
+In a previous work, \textcite{Horn.2021} built a geological model of the Chtouka aquifer (Figure \ref{Fig-GeolMod}) on the basis of lithological drilling data from 100 boreholes, geophysical measurements and a geological map of the region. 
 This model is used in this study and shown in Figure \ref{Fig-GeolMod}. 
 In the following, its main characteristics will be summarised. 
 For more detailed information refer to the cited study.
@@ -129,14 +127,14 @@ Over the modelling area, five different lithological units, each assumed as homo
 These units are:
 
 \begin{itemize}
-    \item calcareous marl,
+    \item calcareous sediments,
     \item gravel,
     \item sand,
     \item schist and
     \item silty sand.
 \end{itemize}
 
-Of these, calcareous marl, sand and schist form the group of main units with large spatial extents. 
+Of these, calcareous sediments, sand and schist form the group of main units with large spatial extents. 
 
 Schist is considered to be the oldest stratigraphical unit. 
 It outcrops in the eastern part of the aquifer and is covered by sediments towards the west. 
@@ -147,19 +145,19 @@ Predominantly the overlying layer is sand, which also forms the top of the aquif
 While reaching its estimated maximum thickness of $150 \, \textrm{m}$ along the coast, the layer thins towards the eastern part. 
 The north east of the model is characterised by alluvial fans of varying compositions of clay, sand and gravel in both horizontal and vertical direction. 
 This area is modeled by the two lithological units silty sand and gravel. 
-Each geological unit is defined by its specific material properties, which are the hydraulic conductivities $K_h$ in horizontal and $K_v$ in vertical direction (both $\left( \textrm{m} \, \textrm{s}^{-1} \right)$) as well as the corresponding horizontal and vertical anisotropies $\left( - \right)$, the porosity $\phi$ $\left( - \right)$, the specific yield $S_y$ $\left( - \right)$ and specific storage $S_s$ $\left( \textrm{m}^{-1} \right)$.
+Each geological unit is defined by its specific material properties, which are the hydraulic conductivities $K_h$ in horizontal and $K_v$ in vertical direction (both in $\textrm{m} \, \textrm{s}^{-1}$) as well as the corresponding horizontal and vertical anisotropies $\left( - \right)$, the porosity $\phi$ $\left( - \right)$, the specific yield $S_y$ $\left( - \right)$ and specific storage $S_s$ $\left( \textrm{m}^{-1} \right)$.
 
-The top of the aquifer corresponds to the surface and is defined by the DEM of \cite{NASA.SRTM1Arc}, which has a $30 \, \textrm{m} \times 30 \, \textrm{m}$ resolution. 
-The bottom boundary of the aquifer is defined by \cite{Horn.2021} depending on the local stratification of the lithological units. 
-As a basis, unweathered schist is generally assumed to be a towards the bottom confining aquitard. 
+The top of the aquifer corresponds to the topographic surface and is defined by the DEM of \textcite{NASA.SRTM1Arc}, which has a $30 \, \textrm{m} \times 30 \, \textrm{m}$ resolution. 
+The bottom boundary of the aquifer is defined by \textcite{Horn.2021} depending on the local stratification of the lithological units. 
+As a basis, unweathered schist is generally assumed to be a confining aquitard at depth. 
 However, schist may become a water bearing stratum due to weathering. 
-Following \cite{McFadden.2005} this weathering is considered to reach at most $50 \, \textrm{m}$ into the unit. 
+Following \textcite{McFadden.2005} this weathering is considered to reach at most $50 \, \textrm{m}$ into the unit. 
 This maximum depth may occur only in regions where the schist crops out, as this is the case in the eastern parts of the model area. 
-Where the schist is overlain by other strata, the weathered depth should accordingly be reduced (Note: This however is not directly stated in \cite{Horn.2021}, but follows from the fact that in the model schist also appears in regions where it is not the top layer). 
+Where the schist is overlain by other strata, the weathered depth should accordingly be reduced (Note: This however is not directly stated in \textcite{Horn.2021}, but follows from the fact that in the model schist also appears in regions where it is not the top layer). 
 This leads to a minimum depth of the aquifer of $50 \, \textrm{m}$ in relation to the local surface elevation in all regions. 
 In the central area, thicknesses of the aquifer are estimated by the depths of the locally deepest drilled boreholes. 
 In the northern part of the Chtouka aquifer, data from measuring campaigns of vertical electrical soundings in the period 1947 to 2008 in the Souss Massa Basin are used to define the bottom of the aquifer. 
-For the coastal areas, transient electromagnetics measurements (\textcite{Kalberkamp.2021}, \textcite{Terratec.2020}) from a campaign within the framework of the CREM project are used.
+For the coastal areas, transient electromagnetics measurements \parencite{Kalberkamp.2021} from a campaign within the framework of the CREM project are used.
 
 \begin{figure}[h]
     \centering
@@ -173,11 +171,11 @@ For the coastal areas, transient electromagnetics measurements (\textcite{Kalber
 \section{Recharge from Precipitation}
 \label{Sec-PrecRech}
 
-Precipitation data were compiled by \cite{Horn.2021} and will be briefly described in the following. 
+Precipitation data were compiled by \textcite{Horn.2021} and will be briefly described in the following. 
 For more information, refer to the cited study.
     
 For estimations of the local precipitation, datasets from meteorological stations in Agadir, Ait Melloul, Ait Amira, Biougra and at the YBT dam were available. 
-Based on these data three zones are identified, which account for the spatial variations of precipitations due to regional differences in altitude and climate. 
+Based on these data three zones were identified, which account for the spatial variations of precipitations due to regional differences in altitude and climate. 
 These zones are shown in Figure \ref{Map-BCPzPrec}.
     
     
@@ -201,13 +199,13 @@ The derived annual time series of recharge from precipitation are shown for the 
 \label{Sec-GWWells}
 
 Groundwater extraction through wells has been examined in various studies by the ABHSM. 
-Thus, data is available from different databases. 
+Thus, data are available from different databases. 
 This data has been previously analysed by the project team and processed to fit the modelling needs. 
 In the following, the main features are summarised. 
-For detailed information refer to the technical notes in Appendices A and B in \cite{Horn.2021}. 
-Each well is characterised by a name, its location in the $xy$-plane and its top elevation, the depth to top of the screen and the screen length as well as by a time series of estimated or measured flow rates. 
+For detailed information refer to the technical notes in Appendices A and B in \textcite{Horn.2021}. 
+Each well is characterised by a name, its location in the $xy$-plane and its top elevation, the depth to the top of the screen and the screen length as well as by a time series of estimated or measured flow rates. 
 All wells can be distinguished into two classes. 
-The first class encompasses manually dug wells, the second drilled and reconaissance wells. 
+The first class encompasses manually dug wells, the second drilled and reconnaissance wells. 
 This classification has been used to interpolate missing data concerning the vertical screen locations and screen lengths of some wells. 
 Furthermore, the wells can be additionally classified through the utilisation of the extracted water, which is either for drinking and domestic purposes or for irrigation. 
 Based on the end user, pumping rates have been estimated for wells with missing data.
@@ -245,14 +243,14 @@ As described in Section \ref{Sec-SouMaStructure}, the Chtouka plain is extensive
 As stated introductorily to this section, a certain portion of the applied irrigation water re-infiltrates into the aquifer and leads to groundwater recharge. 
 To account for this recharge, both the spatial extents and the infiltration rates of the applied water are estimated as described in this section.
 
-It is assumed that the Tassila perimeter exsisted for several hundred of years in its current extents. 
-The public perimeter mainly exists since the commissioning of the YBT dam. 
-Therefore, the extents of both perimeters are assumed as constant. 
+The Tassila perimeter already existed in 1968 and its extent has stayed constant since then \textcite{Bernet.1977}.
+The public perimeter exists since the commissioning of the YBT dam in 1974. 
+The extents of both perimeters are assumed as constant. 
 An analysis of satellite pictures from different years shows a significant change over time for the private perimeter. 
 To account for this evolution, the perimeter's extents are estimated for six consecutive periods (1968-1973, 1974-1979, 1980-1989, 1990-1999, 2000-2009 and 2010-2020). 
 
 Within the three perimeters the three different irrigation techniques flooding, sprinkler and drip irrigation are used. 
-Inside each of the three perimeters, a homogeneous distribution of the applied techniques is assumed. 
+Inside each of the three perimeters, a homogeneous spatial distribution of the applied techniques is assumed. 
 Over time, the frequency ratios of the different methods vary as previous studies show (\cite{Resing.2003}, \cite{Anzar.2016}). 
 Based on these studies the temporal evolution of the frequency ratios is estimated for each of the three perimeters. 
 Infiltration rates are finally calculated depending on these distributions.
@@ -265,12 +263,18 @@ Infiltration rates are finally calculated depending on these distributions.
 Observational data of head measurements are available from 27 piezometers that are scattered over the study area (Figure \ref{Map-BCPzPrec}). 
 These observations cover different time periods within 1968-2020.
 
+%\begin{wrapfigure}{I}{0.5\textwidth}
+%    \centering
+%    \includegraphics[width=0.5\textwidth]{./img/Map-Piezometers_general.png}
+%    \caption{The locations of the 27 single piezometers used for model calibration.}
+%\end{wrapfigure}
+
 At four locations a respective pair of piezometers is available that is covering successive time periods. 
-The second ones were built as due to the local drawdown of the groundwater table the originally installed piezometers fell dry. 
+The second ones were built as, due to the local drawdown of the groundwater table, the originally installed piezometers fell dry. 
 From these piezometers, for each pair a combined, longer time series can be generated. 
 Therewith, observations are available for 23 distinct locations.
 
-Furthermore, the observed head data is calculated from two measurements: A one-time measurement of the $z$-location to level the top of the piezometer, and a second, continuous measurement of depth from the surface to the watertable. 
+Furthermore, the observed head data is calculated from two measurements: A one-time measurement of the $z$-location of the top of the piezometer, and a second, continuous measurement of depth from the surface to the watertable. 
 Thus, piezometers can be divided into two main groups, based on the determination of $z$: levelling and topography map reading. 
 For levelled piezometers, an error of $1 \, \textrm{m}$ is assigned. 
 For non-levelled piezometers, this error is $10 \, \textrm{m}$.

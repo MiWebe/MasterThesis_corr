@@ -11,6 +11,12 @@ Add:
 	- 
 4. Conceptual Model:
 	- Graph time series pumping drinking well + irrigation well (one?)
-	- 
+	- Review, if it makes more sense to insert more different maps instead of the cumulated ones now present (Case 1: Fig. 4.2, 4.6 vs. Case 2: figures from presentation)
+	- Case 2:
+		- Delineation + Boundaries:
+			- Refer to both Fig. 3.3 and new (wrapped) figure with only boundaries. Fig. 3.3 when talking about land marks, new figure when referencing the type of boundary.
+			- Also remember to reference figure with new/adjusted eastern boundary (3D graph)
+	- Drinking + Irrigation Wells:
+		- generate + include new graph, showing exemplary well pumping time series (for trend) one for drinking wells, one for irrigation wells
 5. Implementation:
 	- 
