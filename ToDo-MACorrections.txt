@@ -1,5 +1,8 @@
 Add:
 
+0. General:
+	- add "Corrected"-watermark to all pages via the "draftwatermark"-package
+
 1. Intro:
 	- Information about CREM-Project (see Presi)
 	- 
@@ -8,7 +11,7 @@ Add:
 	- 
 3. Study Region:
 	- Adjust Map (Colour/Height scale)
-	- 
+	- more details on geology
 4. Conceptual Model:
 	- Graph time series pumping drinking well + irrigation well (one?)
 	- Review, if it makes more sense to insert more different maps instead of the cumulated ones now present (Case 1: Fig. 4.2, 4.6 vs. Case 2: figures from presentation)
