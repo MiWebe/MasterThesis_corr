@@ -339,9 +339,9 @@ For non-levelled piezometers, this error is $10 \, \textrm{m}$.
 In this study the Groundwater Modeling System (GMS) software by Aquaveo, LLC. is used as modelling environment. 
 It is a common software applied in the field of hydraulic, hydrologic and groundwater modelling and is used by many federal and local governmental agencies around the world \parencite{Aquaveo.2021}.
 
-Regarding the fundamental flow calculations GMS bases on the modular finite-difference flow model MODFLOW \parencite{McDonald.1988}, which is available in various versions. 
-To simulate seawater intrusion, the three-dimensional multi-species solute transport model MT3DMS \parencite{Zheng.1999} and the variable-density groundwater flow model SEAWAT \parencite{Langevin.2009} will be applied in future studies to the here examined model. 
-As SEAWAT bases on MODFLOW-2000 \parencite{Harbaugh.2000}, in this study this particular MODFLOW version is used.
+Regarding the fundamental flow calculations, GMS is based on the modular finite-difference flow model MODFLOW \parencite{McDonald.1988}, which is available in various versions. 
+To simulate seawater intrusion, the three-dimensional multi-species solute transport model MT3DMS \parencite{Zheng.1999} and the variable-density groundwater flow model SEAWAT \parencite{Langevin.2009} will be applied in future studies. 
+As SEAWAT is based on MODFLOW-2000 \parencite{Harbaugh.2000}, this particular MODFLOW version is used in this study.
 
 MODFLOW itself is divided into a series of processes and packages. 
 While major tasks are organised as processes, more specific tasks are executed by packages leading to the eponymous modularisation. 
@@ -368,30 +368,30 @@ Therewith the groundwater flow in the system that is schematically depicted in C
 where $K_{xx}$, $K_{yy}$ and $K_{zz}$ denote the hydraulic conductivities in $\left( \textrm{m} \, \textrm{s}^{-1} \right)$ along the $x$-, $y$- and $z$-axis respectively, $h$ the potentiometric head in $\left( \textrm{m} \right)$, $S_s$ the specific storage of the porous medium $\left( \textrm{m}^{-1} \right)$ and $t$ the time $\left( \textrm{s} \right)$.
 
 $\dot{M}_{ss,i}$ denotes the different source- and sink-terms $i$ as volumetric flux per unit volume $\left( \textrm{s}^{-1} \right)$. 
-These are following the conceptual model here the recharge from precipitation, the withdrawal from both drinking and irrigation wells and the irrigation returns. 
+These are, following the conceptual model here, the recharge from precipitation, the withdrawal from both drinking and irrigation wells and the irrigation returns. 
 Negative values of $M_{ss,i}$ imply flow out of the system and positive values flow into the system.
 
 As explained in Section \ref{Sec-GWFlowEq} only the diagonal elements $K_{ii}$ of the hydraulic conductivity tensor are here considered. 
 In the deviation of the equation this is possible due to the arbitrary choice of orientation of the coordinate system in the single control volumes parallel to the major axes of the hydraulic conductivity \parencite{Harbaugh.2000}. 
 However it may be noted that in MODFLOW-2000 only a global coordinate system is considered. 
-As stated in Section \ref{Sec-Discretisation} this coordinate system is oriented along the cardinal directions.
+Here, this coordinate system is oriented along the cardinal directions.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Implementation of the Conceptual Model in GMS}
 \label{Sec-ImplToGMS}
 
-The in this study used geological model was implemented by \textcite{Horn.2021} in GMS first as a triangulated irregular network (TIN). 
-It was then discretised as described in Section \ref{Sec-Discretisation}. 
+The geological model used in this study was implemented by \textcite{Horn.2021} in GMS first as a triangulated irregular network (TIN). 
+It is applied to the grid as described in Section \ref{Sec-Discretisation}. 
 The material properties of the geological units that are relevant for this study are the hydraulic conductivities $K$ and specific storage $S_s$, as can be seen from the groundwater flow equation \eqref{Eq-GWFlow}. 
 In this study the hydraulic conductivities are assumed to be horizontally isotropic, $K_{xx} = K_{yy}$, and in vertical direction to have an anisotropy with a factor of 10, $K_{xx} = 10 \cdot K_{zz}$. 
-As the geological model represents a simplification of the aquifer, exact values of the named parameters need to be estimated basing on the model's behaviour. 
+As the geological model represents a simplification of the aquifer, exact values of the named parameters need to be estimated based on the model's behaviour. 
 This is described in Section \ref{Sec-SAnaCal}.
 
-The other layers of the in Chapter \ref{Chap-ConcMod} described conceptual model are imported as distinct layers into GMS. 
+The other layers of the conceptual model are imported as distinct layers into GMS. 
 The different features corresponding to each layer are represented by one of the common GIS-objects, as specified in Table \ref{Tab-GMSLayersOV}. 
 The different MODFLOW packages applied to each layer are listed here as well. 
-As GMS can process only non-overlapping polygons in one layer, the over time varying private irrigation perimeters are defined on several layers. 
+As GMS can process only non-overlapping polygons in one layer, the over time varying private irrigation perimeters are defined as several layers. 
 Therefore each identified period of constant extents (e.g. 1968-1973, see Section \ref{Sec-IrrRech}) is implemented in a single layer, leading to a total of six layers for the private irrigation perimeter. 
 As the public and Tassila perimeters do not overlap, these are assigned to one single, shared layer.
 
@@ -401,15 +401,15 @@ As the public and Tassila perimeters do not overlap, these are assigned to one s
     \label{Tab-GMSLayersOV}
     \begin{tabular}{ccc}
         Layer                                   & GIS-feature type & utilised packages \\ \hline
-        Boundary East                           & arc              & LPF, CHD1         \\
-        Boundary South                          & arc              & LPF, RIV1         \\
-        Boundary West                           & arc              & LPF, CHD1         \\
+        Boundary East                           & arc              & CHD1         \\
+        Boundary South                          & arc              & RIV1         \\
+        Boundary West                           & arc              & CHD1         \\
         Precipitation Areas                     & polygon          & RCH1              \\
         Drinking Wells                          & point            & WEL1              \\
         Irrigation Wells                        & point            & WEL1              \\
         Irrigation Returns Private (6x)$^{(*)}$ & polygon          & RCH1              \\
         Irrigation Returns Public+Tassila       & polygon          & RCH1              \\
-        Piezometers                             & point            & Trans. Head      
+        Piezometers                             & point            & -      
         \end{tabular}
 \end{table}
 
@@ -426,17 +426,17 @@ For further details on the solution method refer to \textcite{Harbaugh.2000}.
 
 \subsubsection{Spatial Discretisation}
 
-In this study the by \cite{Horn.2021} derived three-dimensional discretised geological model is used. 
-It bases on an implementation of the original geological model as from which the three dimensional grid was generated using the grid overlay approach in MODFLOW-2000.
+In this study \textcite{Horn.2021}'s derived three-dimensional discretised geological model is used. 
+It is based on the conversion of the geological model to a three dimensional grid using the grid overlay approach in MODFLOW-2000.
 
-In horizontal direction the resulting grid has a quadratic cell size of $500 \, \textrm{m} \, \times 500 \, \textrm{m}$ with cell edges oriented in the four cardinal directions. 
+In the horizontal direction the resulting grid has a quadratic cell size of $500 \, \textrm{m} \, \times 500 \, \textrm{m}$ with cell edges oriented in the four cardinal directions. 
 Positive $x$-direction points to the east, positive $y$-direction to the north (Figure \ref{Fig-GeolMod}). 
-In vertical direction, the model is set to a thickness of 10 equally spaced layers with therefore in $x$- and $y$-direction locally varying depths. 
+In the vertical direction, the model is divided into 10 layers with the same vertical thickness, varying in the $x$- and $y$-direction. 
 Positive $z$-direction points upwards. 
-The minimum layer thickness is set to $2.5 \, \textrm{m}$. 
+The minimum layer thickness is set to $5 \, \textrm{m}$. 
 The top- and bottom-most cell faces are defined as variably shaped surfaces, depending on the DEM and the bottom of the solids. 
 The shapes of the inter-cellular faces are linearily interpolated between the outer two. 
-To each cell the lithological unit locally incorporating the largest volume is assigned, defining the cell's material properties.
+To each cell the lithological unit locally incorporating the largest volume is assigned, defining the cell material properties.
 
 \subsubsection{Temporal Discretisation}
 
@@ -447,7 +447,7 @@ Each stress period can have a particular length and is further sub-divided into 
 For this model stress periods are defined as the single hydrological years, which start on 1st of September at ${00\!:\!00\!:\!00}$ of one year and end on 31st of August of the subsequent year at ${23\!:\!59\!:\!59}$. 
 They therewith show a variable length due to leap years. 
 The number of time steps is set to two per stress period. 
-The correctness of this approach was successfully tested through comparison of simulations with otherwise constant parameters, showing equality.
+This temporal discretisation was successfully tested through comparison of simulations with different number of time steps and constant parameters, showing unsignificant differences (Section ???).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -456,8 +456,7 @@ The correctness of this approach was successfully tested through comparison of s
 \section{Methodology of Sensitivity Analysis and Calibration}
 \label{Sec-SAnaCal}
 
-The true behaviour $T$ of a system can be either measured, through which an experimental value $E$ is obtained. 
-Or it can be modeled, which yields a modelling value $M$. 
+The true behaviour $T$ of a system can be either measured, through which an experimental value $E$ is obtained, or it can be modeled, which yields a modelling value $M$. 
 In either case, the results obtained deviate from reality due to measuring errors $\delta_E$ or modelling errors $\delta_{SM}$ \parencite{Stern.2001},
 
 \begin{align}
@@ -474,7 +473,7 @@ Likewise, this value underlies a numerical error $\delta_{SN}$ \parencite{Stern.
     M = S - \delta_{SN}
 \end{equation}
 
-The simulation result can be expressed as function $f$ of system inputs (the key variables) $\bm{X}$ and parameter combinations $\bm{\theta}$ \parencite{Naeini.2019},
+The simulation result can be expressed as a function $f$ of system inputs (the key variables) $\bm{X}$ and parameter combinations $\bm{\theta}$ \parencite{Naeini.2019},
 
 \begin{equation}
     \label{Eq-FunSim}
@@ -498,7 +497,7 @@ The latter depends on both the modelling function $f$ itself and the choice of a
 $f$ is defined through the modelling equations whose exact formulation depends on the conceptual model. 
 Therefore after assembling a model to a state as far as described for the here applied model, a further reduction of the simulation error is only possible through an adjustment of the model parameter values $\bm{\theta}$.
 
-A model's response significantly depends on these parameters. 
+A model response significantly depends on these parameters. 
 An example is shown in Figure \ref{Fig-ParamSpaceEx}. 
 Depending on the choice of the specific parameter set, the modelling error varies. 
 This variation is generally non-linear and can show a great deal of interaction between the different parameters \parencite{Duan.1993}. 
@@ -518,7 +517,7 @@ The procedure used in this study is described in Section \ref{Sec-SubMethCal}.
 
 As the function $f(\bm{X},\bm{\theta})$ is often unknown, calibration needs to be conducted by simple trial-and-error. 
 Therefore it is computationally expensive and if carried out manually also very time-consuming. 
-However, not all model parameters impact the model results equally extensive \parencite{Duan.1993}. 
+However, not all model parameters impact the model results equally \parencite{Duan.1993}. 
 Therefore, the number of parameters considered in calibration of a model can preliminarily be reduced to only those parameters with significant impact. 
 To identify these different impacts, the behaviour of the model to changes in single parameters is examined in a sensitivity analysis prior to the calibration. 
 The procedure of the sensitivity analysis that this study follows is described in Section \ref{Sec-SubMethSAna}. 
@@ -547,7 +546,7 @@ Although each of the parameters therewith corresponds to a defined unit, exact v
 This is due to the coarse classification into five lithological units of the possibly more heterogeneous geology of the aquifer. 
 Likewise, characterisations in literature differ.
 
-A within the project framework conducted literature research identified for hydraulic conductivities a range of values over several orders for each material. 
+\textcite{Horn.2021} conducted a literature research and identified a range of values for hydraulic conductivities over several orders for each material. 
 The corresponding minimum and maximum values are listed in Table \ref{Tab-MatPropsRange}. 
 Therewith no direct specification between the hydraulic conductivities in $x$-, $y$- and $z$-direction are possible. 
 To reduce the dimensions of the parameter space, certain assumptions are made. 
@@ -567,6 +566,8 @@ Second, a constant anisotropy between horizontal and vertical hydraulic conducti
 \noindent with the vertical hydraulic conductivity $K_v$. 
 In the following the hydraulic conductivities will be expressed in terms of the horizontal hydraulic conductivities $K_{h}^{(i)}$ of the materials $i$.
 
+% correction option 1: This model deals with an unconfined aquifer. Therefore, \textcite{Horn.2021} conducted a literature research on values for the specific yield $S_y$ for the different materials. Values for the specific yield can either be measured directly or approximated as equalling the effective porosity. The identified range of values for these two parameters are shown in Table \ref{Tab-MatPropsRange}. In MODFLOW cells at the top of the grid can fall dry. If this happens, the affected cells are being deactivated by the model for the rest of the simulation. To avoid convergence problems due to this issue, here the aquifer is modelled using the "confined" option by MODFLOW. Thus, the identified values for the specific yield have to be converted to values of the specific storage $S_s$ as described in Section \ref{Sec-TheoFundTerms}/Equation \eqref{Eq-SsSy} using the aquifer thickness $b$. However, here the aquifer thicknesses vary over the model.
+
 In the same, prior to this study conducted literature research it was found that few values for the specific storage are available in literature. 
 Therefore, more data concerning the specific yield and the effective porosity of probes is given. 
 Thus, the values for the specific storage are approximated with Equation \eqref{Eq-SsSy} through the specific yield $S_y$ and the aquifer thickness $b$. 
@@ -574,10 +575,11 @@ Values for the specific yield can either be measured directly or approximated as
 The identified range of values for these two quantities are shown in Table \ref{Tab-MatPropsRange}. 
 The aquifer thicknesses $b$ refer to average thicknesses of the respective lithological units. 
 However, these thicknesses are not constant but vary significantly in space. 
+% until here the revised paragraph on S_y, S_s etc.
 To account for this the geological model is examined statistically. 
 From this analysis ranges of the material thicknesses are estimated. 
 The corresponding limits are defined by the $20 \, \%$- and $80 \, \%$-Quantiles (Table \ref{Tab-MatPropsRange}). 
-From these estimations of $S_y$ and $b$ the ranges of values for the material-specific specific storages are calculated as described. 
+From these estimations of $S_y$ and $b$ the ranges of values for the material-specific specific storages are calculated using Equation \eqref{Eq-SsSy}. 
 The results are shown in Table \ref{Tab-MatPropsRange}. 
 In the following the specific storages will be expressed as $S_{s}^{(i)}$ of the materials $i$. 
 
@@ -596,8 +598,8 @@ In the following the specific storages will be expressed as $S_{s}^{(i)}$ of the
 
 Regarding the uncertainties of the pumping rates of the irrigation wells, prior to this study an expert on plant hydrology was consulted. 
 An assessment was done on how realistic the yearly withdrawn water volumes might be. 
-The estimations base on the expectable evapotranspiration when taking into account the irrigated area and cultivated plant species. 
-As result, an underestimation of water withdrawal volumes by a factor of 2 was deemed possible. 
+The estimations are based on an assumed average evapotranspiration taking into account the irrigated area and crop types. 
+As a result, an underestimation of water withdrawal volumes up to a factor of 2 was deemed possible. 
 Thus, the range of values for the scaling factor of the irrigation flow rate is set to an interval of 
 
 \begin{equation}
@@ -613,11 +615,11 @@ The parameter space is accordingly 11-dimensional.
 \label{Sec-SubMethSAna}
 
 For the sensitivity analysis a basic parameter set $\bm{\theta}_3$ is picked as reference. 
-To examine the model's behaviour in respect to the different parameters, each parameter is varied seperately in respect to this parameter set within its defined ranges. 
-The model's behaviour to changes of this single parameter within the defined parameter set is assumed as being representative also for other parameter sets. 
+To examine the model behaviour in respect to the different parameters, each parameter is varied seperately in respect to this parameter set within its defined ranges. 
+The model behaviour to changes of this single parameter within the defined parameter set is assumed as being representative also for other parameter sets. 
 Therefore the underlying parameter set is chosen to represent average values of the parameters and not extreme values. 
 Thus, $\bm{\theta}_3$ is defined as the geometric averages of the different parameters. 
-In this study, the model's response $S$ is evaluated for five values of each parameter. 
+In this study, the model response $S$ is evaluated for five values of each parameter. 
     
 The hydraulic conductivities and specific storages from Table \ref{Tab-MatPropsRange} often range over several orders. 
 Therefore a logarithmic partition of the defined intervals is applied with constant proportionalities between neighbouring values. 
@@ -629,14 +631,14 @@ The set of the five examined values $\theta_{i,1},...,\theta_{i,5}$ is defined b
     \bigcup_{j=1,...,n} \theta_{i,j} \; : \; \theta_{i,j} = \left( \frac{\textrm{Max}(\Theta^{(i)})}{\textrm{Min}(\Theta^{(i)})} \right) ^{\frac{j-1}{n-1}} \cdot \textrm{Min}(\Theta^{(i)})
 \end{equation}
 
-\noindent where $n$ is the number of values, thus $n=5$. 
+\noindent where $n$ is the number of values, here $n=5$. 
 The response $S$ of the model is measured through analysis of the dependent variable head $h$, as described in Section \ref{Sec-SubMethErrAss}.
 
 \subsection{Methodology of the Calibration}
 \label{Sec-SubMethCal}
 
 The goal of the calibration is to identify a parameter set $\bm{\theta}$ that globally minimises the modelling error $\delta_{SM}$. 
-However, as described before also local minima of $\delta_{SM}$ may exist, and therewith several major areas to which a search strategy may converge within the feasible parameter space as described by \textcite{Duan.1993}. 
+However, as described before, local minima of $\delta_{SM}$ may also exist, and therewith several major areas to which a search strategy may converge within the feasible parameter space as described by \textcite{Duan.1993}. 
 Within these areas possibly numerous local optima both close to and at various distances from the best solution may be localised. 
 Furthermore, the parameters can show a great deal of - possibly non-linear - interaction and compensation \parencite{Duan.1993}. 
 Thus, the start of a search strategy requires a large enough number of points to identify major areas of attraction. 
@@ -648,10 +650,10 @@ In the following, the algorithm used as orientation is described.
 However, deviations from the strict pattern appear. 
 This is since during the original calibration process the ranges of the single parameters were adjusted, for various reasons.
 
-As the calibration is conducted solely manually in this study, a parallel multi-dimensional clustering is not feasible. 
+As the calibration is conducted solely manually a parallel multi-dimensional clustering is not feasible. 
 Therefore a sequential approach is applied, that is divided into a number of steps $k$. 
-Each such step is comprised of an cycle over the different parameters. 
-Within each such cycle, the parameters are optimised succeedingly with a single iteration. 
+Each step is comprised of an cycle over the different parameters. 
+Within each cycle, the parameters are optimised succeedingly with a single iteration. 
 Therefore, for each iteration an interval $[\theta_{i,k,min}, \theta_{i,k,max}]$ for parameter $i$ is defined. 
 On this interval, $n=5$ or $n=7$ values are calculated in analogy to Equation \eqref{Eq-ParamValCalc} by
 
@@ -670,7 +672,7 @@ Calibration is stopped when either the simulation output shows throughout one st
 \label{Sec-SubMethErrAss}
 
 Common measures for error estimation are the root mean square error ($RMSE$) and the mean absolute error ($MAE$). 
-These average single errors $y_i - \hat{y}_i$ between a measurement value $y_i$ and a reference value $\hat{y}_i$ over all $n$ instances $i$ through different averaging methods. 
+These average single errors $y_i - \hat{y}_i$ between a calculated value $y_i$ and an observed value $\hat{y}_i$ over all $n$ instances $i$ through different averaging methods. 
 $RMSE$ and $MAE$ are defined by
 
 \begin{align}
@@ -682,13 +684,13 @@ $RMSE$ and $MAE$ are defined by
 \noindent The mean absolute error therewith represents the arithmetic average of the single errors $y_i-\hat{y}_i$, thus giving each error the same weight on a linear scale. 
 The $RMSE$ on the other hand, as it first squares the single errors, weights larger errors higher than smaller errors.
 
-In the previous study by \textcite{Horn.2021}, the error of the model was estimated through these two measures. 
+In the previous study by \textcite{Horn.2021}, the error of the steady state model was estimated through these two measures. 
 Therefore the spatially distributed measuring points were regarded as an ensemble. 
 Thus the underlying 3-dimensional continuous scale holding the spatial information could be reduced to a 1-dimensional nominal scale, with the identifier being the piezometer name. 
 Therewith an average response of the model - where the aquifer is regarded as a unit - to changes in parameter values could be estimated. 
 In this study however, the model is regarded in transient state. 
 This introduces an additional dimension, the time. 
-This dimension's scale, as it is discrete and not nominal, holds information about correlations between the values. 
+This dimension scale, as it is discrete and not nominal, holds information about correlations between the values. 
 Trivially, values at later times depend on values at preceding times. 
 Using one of the aforementioned error measures thus leads to loss of information about these dependencies, since every point in time is regarded as an independent instance. 
 This issue is illustrated in Figure \ref{Fig-RMSEvsCorr} (a): All three simulations have the same $RMSE$ in comparison to the observation time series, but their temporal evolution deviates significantly from each other. 
@@ -698,7 +700,7 @@ However, the results underlie an offset in head.
 In case of Simulation 3 the initial offset is even larger, but diminishes until the end of the measuring period due to an underestimation of the long-term trend. 
 An error analysis using the $RMSE$ could not distinguish between these different cases. 
 However, depending on the application the different behaviours may be suitable in different ways. 
-Therefore, the $RMSE$ and the $MAE$ - for analogue reasons - are deemed unfit for the assessment of time series data as in this study.
+Therefore, the $RMSE$ and the $MAE$ - for analogue reasons - are deemed unfit for the assessment of time series data in this study.
 
 \begin{figure}[h]
     \centering
@@ -708,8 +710,8 @@ Therefore, the $RMSE$ and the $MAE$ - for analogue reasons - are deemed unfit fo
 \end{figure}
 
 To derive a more adequate measuring method the correlation between the observed dependent variable and the simulated dependent variable are considered. 
-In Figure \ref{Fig-RMSEvsCorr} this is illustrated for the here used dependent variable head $h$. 
-As basis, it is assumed that a correlation between these two exists and that it can be approximated as linear relationship. 
+In Figure \ref{Fig-RMSEvsCorr} this is illustrated for the dependent variable head $h$. 
+As a basis, it is assumed that a correlation between these two exists and that it can be approximated as a linear relationship (Figure \ref{Fig-RMSEvsCorr}(b)). 
 Therewith it can be parametrised through linear regression,
 
 \begin{equation}
@@ -717,27 +719,26 @@ Therewith it can be parametrised through linear regression,
     S \approx p_0 + p_1 \, E
 \end{equation}
 
-\noindent with the regression coefficients $p_0$ and $p_1$. 
-The therewith defined linear curves are also depicted in Figure \ref{Fig-RMSEvsCorr}.
+\noindent with the simulation result $S$ and the observation $E$ the regression coefficients $p_0$ and $p_1$.
 
 Graphically, $p_1$ denotes the slope of the curve. 
 For determination of the coefficients, least-squares fitting is applied in this study. 
-Therewith, values in proximity to the limits affect the choice of $p_1$ with a higher weight, as in these regions the residuals are more sensitive to the coefficient. 
+Therewith, values in proximity to the interval limits affect the choice of $p_1$ with a higher weight, as in these regions the residuals are more sensitive to the coefficient. 
 Under the assumption that short-term fluctuations of hydraulic head in an aquifer are of significantly smaller amplitude than long-term trends, this coefficient is primarily affected by the latter. 
 Thus, $p_1$ can be understood as comparing the long-term trends of simulation $S$ and observation $E$ with each other. 
 Values $p_1 \approx 1$ denote a similar representation of the trends from the observations by the simulation. 
 Values $p_1 > 1$ or $0 < p_1 < 1$ indicate an overestimation or an underestimation of the observed trend, respectively. 
-Values $p_1 < 0$ denote an under- or overestimation of the trend, but in opposite direction - e.g. while in the observed time series a drawdown of hydraulic head exists, the simulation results would give an increase in hydraulic head.
+Values $p_1 < 0$ denote an opposite trend - e.g. while in the observed time series a drawdown of hydraulic head exists, the simulation results would give an increase in hydraulic head.
 
 
 To estimate long-term trends from observational data, observations need to cover sufficiently long time periods. 
 In this study, only time series covering 7 or more years are considered for estimation of $p_1$. 
 Furthermore, as at four locations a respective pair of piezometers is covering seperate time periods (Section \ref{Sec-Piezometers}), their time series are merged pairwise. 
 To account for the higher certainty at these locations, each piezometer is in the evaluation still considered a single independent observation point, but with the merged time series. 
-This gives each of the piezometer pairs a doubled weight in respect to the other piezometers.
+This gives each of the piezometer pair a doubled weight in respect to the other piezometers.
 
 $p_0$ denotes the intercept of the fitted curve with the $y$-axis of the correlation plot. 
-In this application it marks therewith the simulation value that would occur for an observation value $E = 0$. 
+In this application it marks the simulation value that would occur for an observation value $E = 0$. 
 Such a value however may not be reached in the described, real system, and thus $p_0$ is a primarily mathematical quantity. 
 Furthermore, $p_0$ highly depends on the interval of simulation values and empirical values that are compared. 
 For intervals over large observation values of exclusively the same sign, small changes in $p_1$ result in significant changes of $p_0$. 
@@ -764,17 +765,17 @@ To obtain an expression for $T(t\!=\!0)$, Equation \eqref{Eq-ErrMethLinReg} can 
 
 \noindent Solving for $E(t\!=\!0)$ yields
 
-\begin{equation*}
+\begin{equation}
     \label{Eq-ErrMethDS0-3}
     E(t\!=\!0) \; \; = \; \; \frac{S(t\!=\!0) - p_0}{p_1}
-\end{equation*}
+\end{equation}
 
-Together with Equation \eqref{Eq-ValueEx}, Equation \eqref{Eq-ErrMethDS0-4} can thus be written as
+Together with Equation \eqref{Eq-ValueEx}, Equation \eqref{Eq-ErrMethDS0-1} can thus be written as
 
-\begin{equation*}
+\begin{equation}
     \label{Eq-ErrMethDS0-4}
     \Delta S_0 \; \; = \; \; \frac{S(t=0) - p_0}{p_1} - \delta_E - S(t\!=\!0)
-\end{equation*}
+\end{equation}
 
 \noindent rewriting finally yields
 
@@ -783,14 +784,14 @@ Together with Equation \eqref{Eq-ValueEx}, Equation \eqref{Eq-ErrMethDS0-4} can 
     \Delta S_0 \; \; = \; \; S(t\!=\!0) \cdot \left( \frac{1}{p_1} - 1 \right) - \frac{p_0}{p_1} - \delta_E
 \end{equation}
 
-As $\Delta S_0$ depends on $1/p_1$, it may be noted that $\Delta S_0$ is only defined for values $p \neq 0$.
+As $\Delta S_0$ depends on $1/p_1$, it may be noted that $\Delta S_0$ is only defined for values $p_1 \neq 0$.
 
 In real systems, numerous processes occur that influence its behaviour in different extents. 
 A model does not account for all these processes. 
 Furthermore measurements of dependent variables, that are also modeled underlie measuring errors $\delta_E$. 
 Together, this leads to fluctuations in the measurement value $E$ that are not reproduced by a model. 
-Likewise, inaccurate modelling of single processes can lead to fluctuations of the simulation value $S$ in respect to $E$ (which is strictly speaking equivalent the former and in formulation only a matter of perspective). 
-Such fluctuation highly influence the accuracy of the here applied error measurement approach, as it bases on the assumption of some linear correlation between observation and simulation result. 
+Likewise, inaccurate modelling of single processes can lead to fluctuations of the simulation value $S$ in respect to $E$ (which is strictly speaking equivalent to the former and in formulation only a matter of perspective). 
+Such fluctuation highly influence the accuracy of the applied error measurement approach, as it is based on the assumption of some linear correlation between observations and simulation results. 
 To which extent a model is able to reproduce the variation of the observations through simulation results, and whether it adds more fluctuation than is actually present in the observational data can be estimated by the coefficient of determination, $R^2$ \parencite{Mosteller.1977}. 
 It is defined by
 

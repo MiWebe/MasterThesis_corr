@@ -23,3 +23,8 @@ Add:
 		- generate + include new graph, showing exemplary well pumping time series (for trend) one for drinking wells, one for irrigation wells
 5. Implementation:
 	- 
+6. Results:
+	- add comparison of different simulations with different temporal resolution
+7. Discussion:
+	- add discussion of different temporal resolutions -> no significant differences, therefore reasonable to use less steps
+	- add comment on why \theta_{Q,irr} interval was set with lower limit at 0.5. Discuss that this decision was unnecessary since it was not to be expected that the pumping volumes were overestimated. (Original thought leading to the decision: Symmetry of the interval around the "original" value (1), so that the sensitivity of the model to changes could be estimated also for lower values)
