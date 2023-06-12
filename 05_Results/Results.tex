@@ -1,27 +1,49 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% introductional comment for this chapter on sensitivity analysis and calibration:
+% in the following sections, the approach on sensitivity analysis and calibration will be portrayed with the results and corresponding discussions as obtained in the original thesis. To these, a supplementary/complementary/additional presentation of the results - especially concerning the "real world"/local results of the model - and a respective discussion is added. 
+    %% \begin{annotation}
+    %% Meaning:
+    %% additional results:
+    %% - sensitivities on normalised scale (maybe could be combined with sensitivities on possible ranges following the literature research: one absolute scale on x-axis while keeping the considered $\theta_i,j$ -> problem here probably that the ranges are too different, thus masking the sensitivities on smaller scales)
+    %% - time series of single piezometers
+    %% - ...?
+    %% \end{annotation}
+% A second, post-submission discussion of the applied methods and the thereby obtained results will be conducted in the succeeding Section(s) "Post-submission Discussion".
+    %% \begin{annotation}
+    %% Meaning:
+    %% - review, why original approach was chosen
+        %% - only sensitivities on individual, i.e. parameter-specific, intervals were assessed
+        %% - 
+    %% - discussion, how these approaches were appropriate, and how they were not
+    %% - presentation of alternative approaches
+        %% - for sensitivity analysis and calibration usage of both non-normalised and normalised scales: during calibration, after first initial iteration regarding all parameters, consideration of different parameters depending on current scale (However, this approach means that all parameters are varied simultaneously on the same scale, )
+        %% -
+    %% \end{annotation}
+
+
 \section{Sensitivity Analysis}
 
 The results of the sensitivity analysis are shown in Figures \ref{Fig-SAKhDeltaS0}-\ref{Fig-SAQpR2} for each of the three parameter groups hydraulic conductivity $K_h$, specific storage $S_s$ and scaling factor of the irrigation well pumping rates $\theta_{Q,irr}$ and each of the error measures initial offset $\Delta S_0$, slope coefficient $p_1$ and coefficient of determination $R^2$. 
 Here, boxplots are chosen for representation. 
 Each parameter set-specific box comprises of the $n$ instances of values, one for each qualified piezometer. 
-As described in Section \ref{Sec-SubMethErrAss}, for $\Delta S_0$ and $p_1$ piezometers are excluded with time series shorter than $6 \, \textrm{years}$. 
-Furthermore, $p_1$ a logarithmic scale is naturally appropriate. 
-In favour of rekognisability, in this presentation of the results additional graphs for negative values are omitted. 
+As described in Section \ref{Sec-SubMethErrAss}, for $\Delta S_0$ and $p_1$ piezometers are excluded with time series shorter than $7 \, \textrm{years}$. 
+Furthermore, for $p_1$ a logarithmic scale is naturally appropriate. 
+For clarity, in this presentation of the results additional graphs for negative values are omitted. 
 Thus, and to preserve consistency and comparability, piezometers showing at any global instance negative values of $p_1$ are excluded in graphs of $p_1$. 
 For calculation of $\Delta S_0$ however, this does not apply. 
 Therewith, the following analysis bases on 20 piezometers for $p_1$ and 25 piezometers for $\Delta S_0$ and $R^2$, out of a total of 27 piezometers. 
 For each graph, the medians ($\bm{+}$) are marked, along with the arithmetic averages in case of $\Delta S_0$ and $R^2$ or the geometric averages in case of $p_1$ ($\bm{\times}$). 
 Generally, for the different parameters the model shows different sensitivities.
 
-In case of the hydraulic conductivity of schist, the model does not converge for the smaller values $\theta_{Schist,1}$ and $\theta_{Schist,2}$, thus their respective boxplots are missing in the respective graphs. 
+In case of the hydraulic conductivity of schist, the model does not converge for the smallest values $\theta_{Schist,1}$ and $\theta_{Schist,2}$, thus their respective boxplots are missing in the respective graphs. 
 Regarding the initial offset $\Delta S_0$ (Figure \ref{Fig-SAKhDeltaS0}), sand, gravel, calcareous marl and schist show significant changes on the boxplots, medians and arithmetic averages. 
 For silty sand, only a small variation for larger values can be observed. 
 Regarding the impacts on $p_1$ (Figure \ref{Fig-SAKhp1}) only comparably small variations or none at all can be observed for sand, silty sand and gravel. 
 Slightly larger variations occur for schist and calcareous marl. 
 For smaller values of $K_h$, changes in the boxplots and the arithmetic averages can be observed for sand and calcareous marl, while the respective medians show no variation. 
 This indicates that not all piezometers are affected equally from changes in the parameter values. 
-Finally, for $R^2$ (Figure \ref{Fig-SAKhR2}) significant changes can only be observed for calcareous marl and schist and when regarding the boxplots. 
+Finally, for $R^2$ (Figure \ref{Fig-SAKhR2}) significant changes can only be observed for calcareous marl and schist. 
 Both medians and means show no significant changes, indicating that only single piezometers are affected. 
 This can also be seen when regarding the outliers, that for higher values of $K_h$ become slightly larger and thus are statistically treated as within the wedges.
 
@@ -94,11 +116,11 @@ Once again, $R^2$ (Figure \ref{Fig-SAQpR2}) is affected only for single piezomet
 All in all, the different sensitivites are summarised in Table \ref{Tab-SAOverview}. 
 It can be seen, that in average $K_h$ has a significantly larger impact on $\Delta S_0$ and $S_s$ has a significantly larger impact on $p_1$. 
 This goes in line with the fact that commonly $K_h$ is calibrated for the initial steady state and $S_s$ for the transient state. 
-Nonetheless, smaller impacts appear also on the respective other error measure. 
+Nonetheless, smaller impacts appear also on the respective other error measures. 
 This indicates that it might be reasonable to calibrate these two parameters following an alternating scheme as described in Section \ref{Sec-SubMethCal}.
 
-Without knowledge of the effect on the single piezometer, information about the can be drawn from the here portrayed boxplots. 
-Therefore, a depiction of the excessively many 27 piezometer-specific time series can here and for the further analysis be omitted. 
+Without knowledge of the effect on the single piezometer, information about the can be drawn from the boxplots. 
+Therefore, a depiction of the excessively many 27 piezometer-specific time series can be omitted here and for the further analysis. 
 It can be seen that the parameters have different impacts over the modelling area. 
 For the material-specific parameters this is to be expected, as the lithological units are not homogeneously distributed. 
 Regarding the scaling factor for pumping rates of irrigation wells $\theta_{Q,irr}$, an analogue statement is reasonable.
@@ -145,7 +167,7 @@ The calibration is conducted according to Section \ref{Sec-SubMethCal}.
 In total, 310 simulations are conducted over 7 iteration steps. 
 Figure \ref{Fig-CalibResults} shows the results during the calibration process, displayed through the respective arithmetic ($\Delta S_0$) and geometric ($p_1$) averages. 
 For comparison, the arithmetic mean of the $RMSE$ is plotted as well (Section \ref{Sec-DisEM}). 
-Of the in total 7 iteration steps the last one yields results that are varying only slightly. 
+Of the 7 iteration steps ($k = \{ 1,...,7\}$) the last one yields results that are varying only slightly. 
 Depicted are the simulation results of the respectively picked parameter sets. 
 The first six iteration steps are shown aggregated, while the last is shown in its entirety. 
 The partly large variations (especially at the end of iteration 5) stem from adjustments to the parameter ranges. 
