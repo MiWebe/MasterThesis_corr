@@ -7,7 +7,7 @@
 
 Rocks and soils constituting ground are commonly porous materials, consisting of a solid matrix and an interstitial pore space. 
 Depending on the size of the pores, they can store and conduct groundwater. 
-The ratio between the volume of the pore space $V_p$ and the total volume $V_{tot}$ of a soil probe is called the porosity $\phi$ \parencite{Fetter.2001},
+The ratio between the volume of the pore space $V_p$ and the total volume $V_{tot}$ of a soil is called the porosity $\phi$ \parencite{Fetter.2001},
 
 \begin{equation}
     \label{Eq-Porosity}
@@ -17,7 +17,7 @@ The ratio between the volume of the pore space $V_p$ and the total volume $V_{to
 The accessibility of the pore space to water and to a water flow is limited by the pores of smallest diameter, thus possibly creating non-water filled pores and dead ends. 
 Therefore, only a smaller portion of the pore space is effectively available for groundwater flow. 
 This portion of the pore space is called the effective porosity $\phi_{eff}$ \parencite{Fetter.2001}. 
-It is defined as the ratio of the water-available volume $V_w$ to the total volume of a soil probe,
+It is defined as the ratio of the water-available volume $V_w$ to the total volume of a soil,
 
 \begin{equation}
     \label{Eq-PorEff}
@@ -43,7 +43,7 @@ The specific storage $S_s$ $(\textrm{m})$ accounts for this effect.
 It is defined by
 
 \begin{equation}
-    \frac{\partial \rho \phi}{\partial t} = \rho \, g \, \left( \beta_p + \phi \, \beta_w \right)
+    S_s = \rho \, g \, \left( \beta_p + \phi \, \beta_w \right)
 \end{equation}
 
 \noindent with the density $\rho$ $(\textrm{kg} \, \textrm{m}^{-3})$ of water, the standard gravity $g$ $(\textrm{m} \, \textrm{s}^{-2})$, the compressibility of the bulk aquifer material $\beta_p$ $(\textrm{m}^{2} \, \textrm{N}^{-1})$ and the compressibility of water $\beta_w$ $(\textrm{m}^{2} \, \textrm{N}^{-1})$. 
@@ -70,6 +70,35 @@ Thus, the specific storage of a confined aquifer can be approximated by
     \label{Eq-SsSy}
     S_s = \frac{S}{b} %\frac{S_y}{b}
 \end{equation}
+
+%%%% Corrections added:
+
+Due to the low compressibility of water, for unconfined aquifers the contribution to the storativity from the specific yield is much larger than the contribution from the specific storage, $S_y \gg b S_s$ \parencite{Todd.2005}. 
+Therefore, for unconfined aquifers the following approximation applies:
+
+\begin{equation}
+    \label{Eq-SUnconfined}
+    S \approx S_y
+\end{equation}
+
+For draining confined aquifers on the other hand the specific yield equals zero, $S_y = 0$, as extracted water volumes originate solely from the compressibilities of water $\beta_w$ and soil matrix $\beta_p$. 
+Therefore, for confined aquifers (as long as they remain water saturated):
+
+\begin{equation}
+    \label{Eq-SConfined}
+    S = b S_s
+\end{equation}
+
+With Equations \eqref{Eq-SUnconfined} and \eqref{Eq-SConfined} storativities for confined and unconfined aquifers can be approximated by
+
+%% ToDo: make this equation aligned multi-line
+%\begin{equation}
+%    S \approx
+%    \begin{cases}
+%        S_y \textrm{(unconfined)} \\
+%        b S_s \textrm{(confined)}
+%    \end{cases}
+%\end{equation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
