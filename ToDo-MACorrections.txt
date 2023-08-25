@@ -25,6 +25,7 @@ Add:
 	- 
 6. Results:
 	- add comparison of different simulations with different temporal resolution
+	- for sensitivity analysis: another possibility could be/could have been to carry it out on a (if possible) huge range of values (which are all the same for all parameters), and mark the actual parameter-specific ranges following from the literature research with vertical lines (coloured) in the graph, which would be similar to the one on slide 15 in the presentation (but however with the vertical lines).
 7. Discussion:
 	- add discussion of different temporal resolutions -> no significant differences, therefore reasonable to use less steps
 	- add comment on why \theta_{Q,irr} interval was set with lower limit at 0.5. Discuss that this decision was unnecessary since it was not to be expected that the pumping volumes were overestimated. (Original thought leading to the decision: Symmetry of the interval around the "original" value (1), so that the sensitivity of the model to changes could be estimated also for lower values)
