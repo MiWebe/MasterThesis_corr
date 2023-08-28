@@ -40,3 +40,12 @@
 \usepackage{pdfpages} % to include external pdfs into the document
 
 \usepackage{wrapfig}
+
+\usepackage{caption} % package to have more options how to format the caption of figures
+% define custom caption formats:
+% 1. for full-sized figures:
+% 2. for wrapped figures:
+\DeclareCaptionFormat{full}
+{%
+    \captionsetup{format=hang,labelfont=bf,textfont=it}
+}

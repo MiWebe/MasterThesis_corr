@@ -7,8 +7,8 @@ Add:
 	- Information about CREM-Project (see Presi)
 	- 
 2. Theory:
-	- Literature research about calibration of transient models
-	- 
+	- Literature research about calibration of transient models:
+		- From ChatGPT as a little starter: "Transient model calibration often involves time-dependent data. Metrics like Mean Absolute Percentage Error (MAPE), Time-Weighted Absolute Percentage Error (TWAPE), and Dynamic Time Warping (DTW) are tailored to handle time series data. MAPE and TWAPE focus on relative errors, while DTW measures the dissimilarity between two time series, considering temporal shifts and deformations."
 3. Study Region:
 	- Adjust Map (Colour/Height scale)
 	- more details on geology

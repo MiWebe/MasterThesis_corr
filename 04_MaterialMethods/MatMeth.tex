@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Conceptual Model/Model Geometry}
+\chapter{Conceptual Model \& Model Geometry}
 \label{Chap-ConcMod}
 
 Based on the descriptions of the preceding Chapter \ref{Chap-SouMas}, the conceptual model of the Chtouka aquifer can be regarded as shown in Figure \ref{Fig-SchemeBalance}: First, groundwater directly enters and leaves the volume of the aquifer at its boundaries. 
@@ -19,6 +19,7 @@ At last, in Section \ref{Sec-Piezometers} the piezometers, which represent the o
 \begin{figure}[h]
     \centering
     \includegraphics[width=1.0\textwidth]{./img/Fig-SchematicBalanceSystem.pdf}
+    \captionsetup{format=hang, labelfont=bf, textfont=it}
     \caption{The conceptual water balance of the system.}
     \label{Fig-SchemeBalance}
 \end{figure}
@@ -30,33 +31,38 @@ At last, in Section \ref{Sec-Piezometers} the piezometers, which represent the o
 
 For delineation in the $xy$-plane, a set of four boundaries, each characterised by a particular type of boundary condition were defined \parencite{Anzar.2016}. 
 These different boundaries approximately follow the cardinal directions and are therefore named as \textit{northern, eastern, southern} and \textit{western boundary}. 
-The four boundaries are shown in Figure \ref{Map-BCPzPrec}. 
+The four boundaries are shown in Figure  \ref{Map-BCOverview}. 
 Their exact course is defined by \textcite{Anzar.2016}.
 
-\begin{figure}[p]
-    \centering
-    \includegraphics{./img/Map-BCPzPrec.pdf}
-    \caption{Main components of the Chtouka aquifer conceptual model. For clarity, only the boundaries seperating the three precipitation areas are depicted. For the piezometers used to define the eastern boundary condition, PiT means point-in-time measurements and TS time series.}
-    \label{Map-BCPzPrec}
-\end{figure}
+%\begin{figure}[p]
+%    \centering
+%    \includegraphics{./img/Map-BCPzPrec.pdf}
+%    \caption{Main components of the Chtouka aquifer conceptual model. For clarity, only the boundaries seperating the three precipitation areas are depicted. For the piezometers used to define the eastern boundary condition, PiT means point-in-time measurements and TS time series.}
+%    \label{Map-BCPzPrec}
+%\end{figure}
 
 \subsection{Northern Boundary}
 
-%\begin{wrapfigure}{I}{0.5\textwidth}
-%    \centering
-%    \includegraphics[width=0.5\textwidth]{./img/Map_BoundaryConditions.pdf}
-%    \caption{The boundaries of the model and the piezometers used to define the eastern Dirichlet boundary condition (BC).}
-%\end{wrapfigure}
-
-The northern boundary is defined as a Neumann no-flow boundary (Figure \ref{Map-BCPzPrec}). 
+The northern boundary is defined as a Neumann no-flow boundary. 
 It follows an estimated streamline derived from a contour map of the groundwater table in 1968 by \textcite{Bernet.1968} (reproduced in \cite{Bernet.1977}) which represents a groundwater divide. 
 The boundary runs from the north-eastern corner of the model over $45.3 \, \textrm{km}$ in north-western direction to the coast of the Atlantic Ocean. 
 Even though streamlines change depending on groundwater levels and their spatial and temporal variation, due to lack of data this boundary is assumed to be constant over the modelling period.
 
+\begin{wrapfigure}{I}{0.5\textwidth}
+    \vspace{-16pt}
+    \centering
+    \includegraphics[width=0.5\textwidth]{./img/Map_BoundaryConditions.pdf}
+    \vspace{-30pt}
+    \captionsetup{format=plain, labelfont=bf, textfont=it}
+    \caption{The boundaries of the model and the piezometers used to define the eastern Dirichlet boundary condition (BC).}
+    \vspace{-36pt}
+    \label{Map-BCOverview}
+\end{wrapfigure}
+
 \subsection{Eastern Boundary}
 
 For this study, at the eastern boundary an adjusted version of the specified head boundary (Dirichlet) by \textcite{Horn.2021} is used with estimated transient heads. 
-This boundary marks the transition between the Chtouka plain and the foothills of the Anti Atlas (Figure \ref{Map-BCPzPrec}). 
+This boundary marks the transition between the Chtouka plain and the foothills of the Anti Atlas (Figure \ref{Map-ChtoukaOverview}). 
 The head stages along the boundary vary in both space and time. 
 They are estimated from surface elevation data of a digital elevation model (DEM) \parencite{NASA.SRTM1Arc} and piezometric measurements of the depth to the water table. 
 These latter piezometric measurements were taken at different times and are within a $1.5 \, \textrm{km}$ wide buffer zone along the boundary. 
@@ -82,13 +88,14 @@ For the period after 2005 no further information is available and thus the heads
 \begin{figure}[h]
     \centering
     \includegraphics{./img/Fig-EasternBoundary.pdf}
-    \caption{The adjusted Dirichlet boundary condition for the eastern boundary. The for 1968 estimated initial head (thick blue line) along with the bottom- (thick black dotted) and surface- (thick black dashed) elevations are shown at the starting year 1968. Measured heads are shown in in red as circles for single point-in-time (PiT) measurements and as triangles for time series (TS) measurements. The grid (blue) spanning the temporal evolution of heads shows the linear interpolation in between the 29 locations and the five specified years. For better perceptablility the surface marking the head stages in between these points is coloured according to head values.}
+    \captionsetup{format=hang, labelfont=bf, textfont=it}
+    \caption{The adjusted Dirichlet boundary condition for the eastern boundary. The for 1968 estimated initial head (thick blue line) along with the bottom- (thick black dotted) and surface- (thick black dashed) elevations are shown at the starting year 1968. Measured heads are shown in in red as circles for single point-in-time (PiT) measurements and as triangles for time series (TS) measurements. The grid (blue) spanning the temporal evolution of heads shows the linear interpolation in between the 29 locations and the five specified years. For better perceptablility the surface marking the head stages between these points is coloured according to head values.}
     \label{Fig-EastB}
 \end{figure}
 
 \subsection{Southern Boundary}
 
-The southern boundary is defined by the Massa River (Figure \ref{Map-BCPzPrec}). 
+The southern boundary is defined by the Massa River (Figure \ref{Map-ChtoukaOverview}). 
 Due to both the temporal and spatial variability of the flow regimes along the river, changing influent and effluent conditions of the aquifer occur along this boundary. 
 To account for this, \cite{Horn.2021} implemented this boundary as Cauchy boundary condition into GMS. 
 Hence it is characterised through three parameters: the bottom elevation of the river channel, the head stage and the riverbed conductance. 
@@ -116,7 +123,7 @@ In the wider downstream part on the other hand less erosion and higher sedimenta
 \subsection{Western Boundary}
 
 The western boundary is defined as a Dirichlet constant head boundary. 
-Its shape is defined by the coast of the Chtouka plain along the Atlantic Ocean (Figure \ref{Map-BCPzPrec}). 
+Its shape is defined by the coast of the Chtouka plain along the Atlantic Ocean (Figure \ref{Map-ChtoukaOverview}). 
 Head stages at this boundary are assumed to be at a constant sea level of $0 \, \textrm{m.a.s.l.}$ over the whole modelling period.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,6 +160,22 @@ The north east of the model is characterised by alluvial fans of varying composi
 This area is modeled by the two lithological units silty sand and gravel. 
 Each geological unit is defined by its specific material properties, which are the hydraulic conductivities $K_h$ in horizontal and $K_v$ in vertical direction (both in $\textrm{m} \, \textrm{s}^{-1}$) as well as the corresponding horizontal and vertical anisotropies $\left( - \right)$, the porosity $\phi$ $\left( - \right)$, the specific yield $S_y$ $\left( - \right)$ and specific storage $S_s$ $\left( \textrm{m}^{-1} \right)$.
 
+%\begin{figure}[b!]
+%    \centering
+%    \includegraphics{./img/Fig-GeoMod.pdf}
+%    \captionsetup{format=hang, labelfont=bf, textfont=it}
+%    \caption{The geological model of the Chtouka aquifer, as defined by \cite{Horn.2021}. The $xy$-plane is oriented along the four cardinal directions with the positive $x$-direction pointing to the north (arrow). In the $xy$-plane cell edges have a length of $500 \, \textrm{m}$. For presentation purposes, a $z$-magnification with a factor of 10 is applied.}
+%    \label{Fig-GeolMod}
+%\end{figure}
+
+\begin{figure}[b!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./img/Fig-GeoMod.png}
+    \captionsetup{format=hang, labelfont=bf, textfont=it}
+    \caption{The geological model of the Chtouka aquifer. (a) 3D view of the grid of the aquifer model. The black line shows the location of the crosssection. (b) Crosssection from east to west. The $z$-axis is magnified by a factor of 20. The figure is taken from \textcite{Horn.2021}.}
+    \label{Fig-GeolMod}
+\end{figure}
+
 The top of the aquifer corresponds to the topographic surface and is defined by the DEM of \textcite{NASA.SRTM1Arc}, which has a $30 \, \textrm{m} \times 30 \, \textrm{m}$ resolution. 
 The bottom boundary of the aquifer is defined by \textcite{Horn.2021} depending on the local stratification of the lithological units. 
 As a basis, unweathered schist is generally assumed to be a confining aquitard at depth. 
@@ -165,12 +188,7 @@ In the central area, thicknesses of the aquifer are estimated by the depths of t
 In the northern part of the Chtouka aquifer, data from measuring campaigns of vertical electrical soundings in the period 1947 to 2008 in the Souss Massa Basin are used to define the bottom of the aquifer. 
 For the coastal areas, transient electromagnetics measurements \parencite{Kalberkamp.2021} from a campaign within the framework of the CREM project are used.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics{./img/Fig-GeoMod.pdf}
-    \caption{The already geological model of the Chtouka aquifer, as defined by \cite{Horn.2021}. The $xy$-plane is oriented along the four cardinal directions with the positive $x$-direction pointing to the north (arrow). In the $xy$-plane cell edges have a length of $500 \, \textrm{m}$. For presentation purposes, a $z$-magnification with a factor of 10 is applied.}
-    \label{Fig-GeolMod}
-\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -182,13 +200,18 @@ For more information, refer to the cited study.
     
 For estimations of the local precipitation, datasets from meteorological stations in Agadir, Ait Melloul, Ait Amira, Biougra and at the YBT dam were available. 
 Based on these data three zones were identified, which account for the spatial variations of precipitations due to regional differences in altitude and climate. 
-These zones are shown in Figure \ref{Map-BCPzPrec}.
+These zones are shown in Figure \ref{Map-PrecZones}.
 
-%\begin{wrapfigure}{I}{0.5\textwidth}
-%    \centering
-%    \includegraphics[width=0.5\textwidth]{./img/Map_PrecipitationZones.pdf}
-%    \caption{The precipitation zones.}
-%\end{wrapfigure}
+\begin{wrapfigure}{I}{0.5\textwidth}
+    \vspace{-24pt}
+    \centering
+    \includegraphics[width=0.5\textwidth]{./img/Map_PrecipitationZones.pdf}
+    \vspace{-18pt}
+    \captionsetup{format=plain, labelfont=bf, textfont=it}
+    \caption{The precipitation zones.}
+    \vspace{-24pt}
+    \label{Map-PrecZones}
+\end{wrapfigure}
     
 The northwestern zone has the highest average annual precipitation of \linebreak $220 \, \textrm{mm} \, \textrm{a}^{-1}$ over the modelling period (1968-2020). 
 The central zone, which incorporates the largest area of the model region, and the southeastern zone are characterised by a significantly lower annual precipitation of $190 \, \textrm{mm} \, \textrm{a}^{-1}$ respectively $160 \, \textrm{mm} \, \textrm{a}^{-1}$ over the modelling period.
@@ -200,7 +223,8 @@ The derived annual time series of recharge from precipitation are shown for the 
 \begin{figure}[h]
     \centering
     \includegraphics{./img/Fig-PrecRecharge.pdf}
-    \caption{Time series of annual groundwater recharge in the three different zones (Figure \ref{Map-BCPzPrec}) as identified by \cite{Horn.2021}.}
+    \captionsetup{format=hang,labelfont=bf,textfont=it}
+    \caption{Time series of annual groundwater recharge in the three different zones (Figure \ref{Map-PrecZones}) as identified by \textcite{Horn.2021}.}
     \label{Fig-RechPrec}
 \end{figure}
 
@@ -208,6 +232,17 @@ The derived annual time series of recharge from precipitation are shown for the 
 
 \section{Groundwater Wells}
 \label{Sec-GWWells}
+
+\begin{wrapfigure}{h}{0.5\textwidth}
+    \vspace{-24pt}
+    \centering
+    \includegraphics[width=0.5\textwidth]{./img/Map_WellsDrinking.pdf}
+    \vspace{-18pt}
+    \captionsetup{format=plain, textfont=it, labelfont=bf}
+    \caption{The spatial distribution of the drinking water wells.}
+    \vspace{-12pt}
+    \label{Map-WellsDrinking}
+\end{wrapfigure}
 
 Groundwater extraction through wells has been examined in various studies by the ABHSM. 
 Thus, data are available from different databases. 
@@ -221,48 +256,52 @@ This classification has been used to interpolate missing data concerning the ver
 Furthermore, the wells can be additionally classified through the utilisation of the extracted water, which is either for drinking and domestic purposes or for irrigation. 
 Based on the end user, pumping rates have been estimated for wells with missing data.
 
+\begin{figure}[t!]
+    \centering
+    \includegraphics{./img/Fig-WellsTotalRates.pdf}
+    \captionsetup{format=hang,labelfont=bf,textfont=it}
+    \captionsetup{format=hang, textfont=it, labelfont=bf}
+    \caption{Time series of total pumping rates over all drinking or irrigation wells, respectively.}
+    \label{Fig-WellsPumpTS}
+\end{figure}
+
 \subsection{Drinking Wells}
 
-%\begin{wrapfigure}{I}{0.5\textwidth}
-%    \centering
-%    \includegraphics[width=0.5\textwidth]{./img/Map_WellsDrinking.pdf}
-%    \caption{The drinking water wells.}
-%\end{wrapfigure}
-
 A total of 380 wells are considered as drinking wells in the study area. 
-These are depicted in Figure \ref{Map-PumpWells}(a). 
+These are depicted in Figure \ref{Map-WellsDrinking}. 
 Data on extracted water volumes are available for the time periods 1969-2001 from one single source and 2001-2020 from several sources. 
 Based on these datasets pumping volumes and therewith pumping rates are estimated for the whole period from 1969 to 2020. 
 Information on commissioning of new wells is only available until 2003. 
 After 2003, the further commissioning of wells is assumed as being coupled to the population growth and is assigned a yearly growth rate of $0.7 \, \%$, thus slowly increasing the extracted water volume.
-
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics{./img/Fig-WellsTotalRates.pdf}
-%    \caption{Time series of total pumping rates over all drinking or irrigation wells, respectively.}
-%    \label{Fig-WellsPumpTS}
-%\end{figure}
+The resulting time series of total pumping rates over the complete period is shown in Figure \ref{Fig-WellsPumpTS}.
 
 \subsection{Irrigation Wells}
 
-%\begin{wrapfigure}{I}{0.5\textwidth}
-%    \centering
-%    \includegraphics[width=0.5\textwidth]{./img/Map_WellsIrrigation.pdf}
-%    \caption{The irrigation water wells.}
-%\end{wrapfigure}
+\begin{wrapfigure}{h}{0.5\textwidth}
+    \vspace{-64pt}
+    \centering
+    \includegraphics[width=0.5\textwidth]{./img/Map_WellsIrrigation.pdf}
+    \vspace{-18pt}
+    \captionsetup{format=plain, textfont=it, labelfont=bf}
+    \caption{The irrigation water wells.}
+    \vspace{-24pt}
+    \label{Map-WellsIrrigation}
+\end{wrapfigure}
 
 Data regarding the irrigation wells is available from two surveys carried out in 2003 and 2015. 
 In the study from 2003, a total of 2448 wells are recorded and in 2015 a number of 3050 wells. 
 Due to significant differences in either location (the vast majority) or in well characteristics (for wells with similar coordinates) both sets of wells are considered as disjunct. 
-Therewith a total of 5498 irrigation wells is considered in this study (Figure \ref{Map-PumpWells} (b)). 
+Therewith a total of 5498 irrigation wells is considered in this study (Figure \ref{Map-WellsIrrigation}). 
 Data from the studies are based on personal records or memorizations from farmers and estimates for each well or each farm made during the surveys.
+As the time series for the drinking wells, the resulting time series of total pumping rates over the complete period is shown in Figure \ref{Fig-WellsPumpTS} for the irrigation wells, too.
+Note the higher order of total pumping rates of the irrigation wells.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics{./img/Map_IrrDri.pdf}
-    \caption{Spatial distribution of the in this study considered 5498 irrigation wells (left) and 380 drinking wells (right).}
-    \label{Map-PumpWells}
-\end{figure}
+%\begin{figure}[h]
+%    \centering
+%    \includegraphics{./img/Map_IrrDri.pdf}
+%    \caption{Spatial distribution of the in this study considered 5498 irrigation wells (left) and 380 drinking wells (right).}
+%    \label{Map-PumpWells}
+%\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -273,44 +312,58 @@ As described in Section \ref{Sec-SouMaStructure}, the Chtouka plain is extensive
 As stated introductorily to this section, a certain portion of the applied irrigation water re-infiltrates into the aquifer and leads to groundwater recharge. 
 To account for this recharge, both the spatial extents and the infiltration rates of the applied water are estimated as described in this section.
 
-%\begin{wrapfigure}{I}{0.5\textwidth}
-%    \centering
-%    \includegraphics[width=0.5\textwidth]{./img/Map_IrrigationPerimeters.pdf}
-%    \caption{The different irrigation perimeters. In case of the private irrigation perimeter, only the initial extents and the final extents for the modelling period are depicted.}
-%\end{wrapfigure}
+\begin{wrapfigure}{I}{0.5\textwidth}
+    \vspace{-24pt}
+    \centering
+    \includegraphics[width=0.5\textwidth]{./img/Map_IrrigationPerimeters.pdf}
+    \vspace{-18pt}
+    \captionsetup{format=plain, textfont=it, labelfont=bf}
+    \caption{The different irrigation perimeters. In case of the private irrigation perimeter, only the initial extents and the final extents for the modelling period are depicted.}
+    \vspace{-12pt}
+    \label{Map-IrrigationPerimeters}
+\end{wrapfigure}
 
 The Tassila perimeter already existed in 1968 and its extent has stayed constant since then \textcite{Bernet.1977}.
 The public perimeter exists since the commissioning of the YBT dam in 1974. 
 The extents of both perimeters are assumed as constant. 
 An analysis of satellite pictures from different years shows a significant change over time for the private perimeter. 
 To account for this evolution, the perimeter's extents are estimated for six consecutive periods (1968-1973, 1974-1979, 1980-1989, 1990-1999, 2000-2009 and 2010-2020). 
+The extents of the public and Tassila perimeter, along the initial (1968-1973) and final (2009-2019) ones of the private perimeter are shown in Figure \ref{Map-IrrigationPerimeters}. 
+Note that the public perimeter exists only since 1974, which leads to the overlap between private and public perimeter in this map, due to the different depicted time periods.
 
 Within the three perimeters the three different irrigation techniques flooding, sprinkler and drip irrigation are used. 
 Inside each of the three perimeters, a homogeneous spatial distribution of the applied techniques is assumed. 
 Over time, the frequency ratios of the different methods vary as previous studies show (\cite{Resing.2003}, \cite{Anzar.2016}). 
 Based on these studies the temporal evolution of the frequency ratios is estimated for each of the three perimeters. 
-Infiltration rates are finally calculated depending on these distributions.
+Infiltration rates are finally calculated depending on these distributions. 
+The resulting time series of infiltration rates are shown in Figure \ref{Fig-IrrRetTS}.
 
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics{./img/Fig-IrrigationReturnsTS.pdf}
-%    \caption{Recharge rates from irrigation returns in the different irrigation perimeters.}
-%    \label{Fig-IrrRetTS}
-%\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics{./img/Fig-IrrigationReturnsTS.pdf}
+    \captionsetup{format=hang, textfont=it, labelfont=bf}
+    \caption{Recharge rates from irrigation returns in the different irrigation perimeters.}
+    \label{Fig-IrrRetTS}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Observations}
 \label{Sec-Piezometers}
 
-Observational data of head measurements are available from 27 piezometers that are scattered over the study area (Figure \ref{Map-BCPzPrec}). 
+Observational data of head measurements are available from 27 piezometers that are scattered over the study area (Figure \ref{Map-Piezometers}). 
 These observations cover different time periods within 1968-2020.
 
-%\begin{wrapfigure}{I}{0.5\textwidth}
-%    \centering
-%    \includegraphics[width=0.5\textwidth]{./img/Map_PiezometersNamed.pdf}
-%    \caption{The locations of the 27 single piezometers used for model calibration.}
-%\end{wrapfigure}
+\begin{wrapfigure}{I}{0.5\textwidth}
+    \vspace{-21pt}
+    \centering
+    \includegraphics[width=0.5\textwidth]{./img/Map_PiezometersNamed.pdf}
+    \vspace{-16pt}
+    \captionsetup{format=plain, textfont=it, labelfont=bf}
+    \caption{The locations of the 27 single piezometers used for model calibration.}
+    \vspace{-18pt}
+    \label{Map-Piezometers}
+\end{wrapfigure}
 
 At four locations a respective pair of piezometers is available that is covering successive time periods. 
 The second ones were built as, due to the local drawdown of the groundwater table, the originally installed piezometers fell dry. 

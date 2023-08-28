@@ -1,18 +1,18 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Main.blg'
-[170] biber-MSWIN32:340> INFO - === 
-[226] Biber.pm:418> INFO - Reading 'Main.bcf'
-[448] Biber.pm:972> INFO - Found 42 citekeys in bib section 0
-[469] Biber.pm:4383> INFO - Processing section 0
-[485] Biber.pm:4574> INFO - Looking for bibtex file '../08_Literature/references.bib' for section 0
-[591] bibtex.pm:1713> INFO - LaTeX decoding ...
-[713] bibtex.pm:1518> INFO - Found BibTeX data source '../08_Literature/references.bib'
-[1133] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1134] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1134] Biber.pm:4203> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-GB'
-[1134] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-GB'
-[1216] bbl.pm:654> INFO - Writing 'Main.bbl' with encoding 'UTF-8'
-[1256] bbl.pm:757> INFO - Output to Main.bbl
-[1257] Biber.pm:130> WARN - Entry 'NASA.SRTM1Arc' (../08_Literature/references.bib): Invalid format '07.09.2022' of date field 'urldate' - ignoring
-[1257] Biber.pm:130> WARN - Entry 'USGS.Earthexplorer' (../08_Literature/references.bib): Invalid format '07.09.2022' of date field 'urldate' - ignoring
-[1257] Biber.pm:132> INFO - WARNINGS: 2
+[175] biber-MSWIN32:340> INFO - === 
+[246] Biber.pm:418> INFO - Reading 'Main.bcf'
+[500] Biber.pm:972> INFO - Found 42 citekeys in bib section 0
+[522] Biber.pm:4383> INFO - Processing section 0
+[540] Biber.pm:4574> INFO - Looking for bibtex file '../08_Literature/references.bib' for section 0
+[650] bibtex.pm:1713> INFO - LaTeX decoding ...
+[748] bibtex.pm:1518> INFO - Found BibTeX data source '../08_Literature/references.bib'
+[1198] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1198] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1198] Biber.pm:4203> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-GB'
+[1198] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-GB'
+[1281] bbl.pm:654> INFO - Writing 'Main.bbl' with encoding 'UTF-8'
+[1324] bbl.pm:757> INFO - Output to Main.bbl
+[1325] Biber.pm:130> WARN - Entry 'NASA.SRTM1Arc' (../08_Literature/references.bib): Invalid format '07.09.2022' of date field 'urldate' - ignoring
+[1325] Biber.pm:130> WARN - Entry 'USGS.Earthexplorer' (../08_Literature/references.bib): Invalid format '07.09.2022' of date field 'urldate' - ignoring
+[1325] Biber.pm:132> INFO - WARNINGS: 2

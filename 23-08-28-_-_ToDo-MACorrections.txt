@@ -1,0 +1,6 @@
+ToDo:
+
+- update formatting of all figures according to new wrapped/full size formatting
+- review colouring in Figure 4.11: adjust it to colours of respective perimeters in map (Figure 4.10)?
+- long-term: numbers of irrigation wells in- and outside of all/respective irrigation perimeters (at each time period?)
+- Figure 4.4: replace with figure from Horn, 2021
